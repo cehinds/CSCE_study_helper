@@ -1,0 +1,181 @@
+{
+    "Process Management": {
+        "description": "Covers process states, PCB, fork/execvp, and Linux process management.",
+        "questions": [
+            {
+                "question": "Which state represents a process waiting for an I/O event in the five-state model?",
+                "type": "radio",
+                "options": ["Running", "Ready", "Blocked", "New"],
+                "answer": "Blocked",
+                "explanation": "The Blocked/Waiting state occurs when a process cannot execute until an external event (e.g., I/O completion) occurs.",
+                "image": null
+            },
+            {
+                "question": "What does the PCB's 'Program Counter' store?",
+                "type": "radio",
+                "options": ["Process ID", "Next instruction address", "Memory limits", "I/O status"],
+                "answer": "Next instruction address",
+                "explanation": "The Program Counter holds the address of the next instruction to execute.",
+                "image": null
+            },
+            {
+                "question": "What does fork() return in the child process?",
+                "type": "radio",
+                "options": ["0", "Child PID", "-1", "Parent PID"],
+                "answer": "0",
+                "explanation": "fork() returns 0 in the child process and the child's PID in the parent.",
+                "image": null
+            },
+            {
+                "question": "A zombie process is one that:",
+                "type": "radio",
+                "options": ["Uses too much CPU", "Has terminated but remains in the process table", "Cannot access I/O", "Runs in kernel mode"],
+                "answer": "Has terminated but remains in the process table",
+                "explanation": "Zombie processes retain their entry in the process table until the parent reads their exit status.",
+                "image": null
+            }
+        ]
+    },
+    "CPU Scheduling": {
+        "description": "Focuses on scheduling algorithms like FCFS, RR, SPN, and performance metrics.",
+        "questions": [
+            {
+                "question": "Which algorithm suffers from the 'convoy effect'?",
+                "type": "radio",
+                "options": ["FCFS", "Round Robin", "SRT", "HRRN"],
+                "answer": "FCFS",
+                "explanation": "FCFS allows long processes to block shorter ones, creating a convoy of waiting processes.",
+                "image": null
+            },
+            {
+                "question": "In Round Robin, a small time quantum increases:",
+                "type": "radio",
+                "options": ["Throughput", "Response time", "Context switches", "Fairness"],
+                "answer": "Context switches",
+                "explanation": "Small quanta force frequent context switches, reducing efficiency.",
+                "image": null
+            },
+            {
+                "question": "Which metric does SPN optimize?",
+                "type": "radio",
+                "options": ["CPU utilization", "Waiting time", "Throughput", "Response time"],
+                "answer": "Waiting time",
+                "explanation": "SPN minimizes average waiting time by prioritizing short jobs.",
+                "image": null
+            }
+        ]
+    },
+    "Concurrency and Synchronization": {
+        "description": "Covers semaphores, mutual exclusion, race conditions, and classic problems like Producer-Consumer.",
+        "questions": [
+            {
+                "question": "A semaphore initialized to 5 allows ___ processes in the critical section.",
+                "type": "radio",
+                "options": ["1", "5", "0", "Unlimited"],
+                "answer": "5",
+                "explanation": "A counting semaphore allows concurrent access up to its initial value.",
+                "image": null
+            },
+            {
+                "question": "Which solves the 'race condition'?",
+                "type": "radio",
+                "options": ["Fork()", "Semaphores", "Virtual Memory", "TLB"],
+                "answer": "Semaphores",
+                "explanation": "Semaphores enforce mutual exclusion to prevent race conditions.",
+                "image": null
+            },
+            {
+                "question": "In the Producer-Consumer problem, the 'empty' semaphore tracks:",
+                "type": "radio",
+                "options": ["Filled slots", "Free slots", "Mutex locks", "Thread count"],
+                "answer": "Free slots",
+                "explanation": "The 'empty' semaphore counts available buffer slots for producers.",
+                "image": null
+            }
+        ]
+    },
+    "Memory Management": {
+        "description": "Includes virtual memory, caching, paging, and memory hierarchy.",
+        "questions": [
+            {
+                "question": "The 'hit ratio' in a cache affects:",
+                "type": "radio",
+                "options": ["TLB size", "Average access time", "Page faults", "Disk latency"],
+                "answer": "Average access time",
+                "explanation": "Higher hit ratios reduce average access time by avoiding slower memory levels.",
+                "image": null
+            },
+            {
+                "question": "Virtual memory allows processes to:",
+                "type": "radio",
+                "options": ["Bypass RAM", "Use more memory than physically available", "Share CPU registers", "Avoid page tables"],
+                "answer": "Use more memory than physically available",
+                "explanation": "Virtual memory abstracts physical memory using disk space.",
+                "image": null
+            }
+        ]
+    },
+    "Threads and Multithreading": {
+        "description": "Covers ULTs, KLTs, synchronization, and thread benefits.",
+        "questions": [
+            {
+                "question": "User-Level Threads (ULTs) are managed by:",
+                "type": "radio",
+                "options": ["The kernel", "The application", "Hardware", "The scheduler"],
+                "answer": "The application",
+                "explanation": "ULTs are handled in user space via libraries, not the kernel.",
+                "image": null
+            },
+            {
+                "question": "A key advantage of threads over processes is:",
+                "type": "radio",
+                "options": ["Faster context switching", "Strong isolation", "Separate memory", "Higher security"],
+                "answer": "Faster context switching",
+                "explanation": "Threads share memory, reducing context-switch overhead.",
+                "image": null
+            }
+        ]
+    },
+    "Linux Systems": {
+        "description": "Focuses on Linux process management, system calls, and commands.",
+        "questions": [
+            {
+                "question": "The Linux task_struct stores:",
+                "type": "radio",
+                "options": ["File contents", "Process state", "Network IPs", "User passwords"],
+                "answer": "Process state",
+                "explanation": "task_struct holds process metadata like state, PID, and registers.",
+                "image": null
+            },
+            {
+                "question": "Which command lists all running processes?",
+                "type": "radio",
+                "options": ["ls", "ps aux", "grep", "chmod"],
+                "answer": "ps aux",
+                "explanation": "ps aux displays a detailed list of all running processes.",
+                "image": null
+            }
+        ]
+    },
+    "Advanced Topics": {
+        "description": "Includes deadlock, DMA, multicore systems, and synchronization primitives.",
+        "questions": [
+            {
+                "question": "Belady’s Anomaly occurs in:",
+                "type": "radio",
+                "options": ["FIFO page replacement", "LRU", "Optimal", "Round Robin"],
+                "answer": "FIFO page replacement",
+                "explanation": "FIFO can increase page faults when adding more frames, violating intuition.",
+                "image": null
+            },
+            {
+                "question": "DMA allows data transfers without:",
+                "type": "radio",
+                "options": ["CPU involvement", "Memory", "Caches", "Interrupts"],
+                "answer": "CPU involvement",
+                "explanation": "Direct Memory Access lets I/O devices transfer data directly to/from memory.",
+                "image": null
+            }
+        ]
+    }
+}

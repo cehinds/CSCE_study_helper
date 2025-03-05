@@ -1,0 +1,266 @@
+{
+    "Programming Paradigms": {
+        "description": "Covers different programming approaches including functional, OOP, and declarative paradigms.",
+        "questions": [
+            {
+                "question": "Which paradigm emphasizes immutable data and pure functions?",
+                "type": "radio",
+                "options": ["Imperative", "OOP", "Functional", "Declarative"],
+                "answer": "Functional",
+                "explanation": "Functional programming avoids side effects by treating computation as the evaluation of mathematical functions, using immutable data and pure functions where the output depends only on the inputs.",
+                "image": null
+            },
+            {
+                "question": "Identify the paradigm used in SQL:",
+                "type": "radio",
+                "options": ["Declarative", "Procedural", "Functional", "OOP"],
+                "answer": "Declarative",
+                "explanation": "SQL is declarative because you specify WHAT data you want rather than HOW to retrieve it, letting the database engine handle the procedural details.",
+                "image": null
+            },
+            {
+                "question": "Which language is primarily imperative?",
+                "type": "radio",
+                "options": ["Haskell", "Prolog", "C", "SQL"],
+                "answer": "C",
+                "explanation": "C follows the imperative paradigm where programs consist of explicit commands that change the program state through sequences of statements.",
+                "image": null
+            },
+            {
+                "question": "What is the main feature of OOP?",
+                "type": "radio",
+                "options": ["Loops", "Inheritance", "Pure Functions", "Logic Clauses"],
+                "answer": "Inheritance",
+                "explanation": "Object-Oriented Programming (OOP) focuses on objects containing both data and methods, with inheritance allowing classes to inherit properties and behaviors from parent classes.",
+                "image": null
+            },
+            {
+                "question": "Which paradigm uses facts and rules?",
+                "type": "radio",
+                "options": ["Logic", "Functional", "Imperative", "OOP"],
+                "answer": "Logic",
+                "explanation": "Logic programming (used in languages like Prolog) uses facts and rules to express knowledge and perform inference-based computations.",
+                "image": null
+            }
+        ]
+    },
+    
+    "C/C++ vs Python vs Java": {
+        "description": "Comparisons between popular programming languages focusing on memory management, typing systems, and inheritance models.",
+        "questions": [
+            {
+                "question": "Which language uses manual memory management?",
+                "type": "radio",
+                "options": ["Python", "Java", "C", "All of these"],
+                "answer": "C",
+                "explanation": "C requires manual memory management using malloc/free, while Python/Java use automatic garbage collection.",
+                "image": null
+            },
+            {
+                "question": "Which has static typing?",
+                "type": "radio",
+                "options": ["Python", "Java", "Ruby", "All"],
+                "answer": "Java",
+                "explanation": "Java uses static typing where variable types are declared at compile-time, unlike Python which uses dynamic typing.",
+                "image": null
+            },
+            {
+                "question": "Which is interpreted?",
+                "type": "radio",
+                "options": ["C++", "Java", "Python", "All"],
+                "answer": "Python",
+                "explanation": "Python is interpreted line-by-line, while C++/Java are compiled to machine code or bytecode first.",
+                "image": null
+            },
+            {
+                "question": "Which supports multiple inheritance?",
+                "type": "radio",
+                "options": ["Java", "C++", "Python", "Both B and C"],
+                "answer": "Both B and C",
+                "explanation": "C++ and Python support multiple inheritance, while Java only allows single inheritance with interfaces.",
+                "image": null
+            },
+            {
+                "question": "Which uses JVM?",
+                "type": "radio",
+                "options": ["Python", "C", "Java", "C++"],
+                "answer": "Java",
+                "explanation": "Java runs on the Java Virtual Machine (JVM), which enables cross-platform 'write once, run anywhere' capability.",
+                "image": null
+            }
+        ]
+    },
+
+    "Compilation Phases": {
+        "description": "Understanding the different stages of program compilation and their functions.",
+        "questions": [
+            {
+                "question": "Which phase checks variable declaration?",
+                "type": "radio",
+                "options": ["Lexical", "Syntax", "Semantic", "Code Gen"],
+                "answer": "Semantic",
+                "explanation": "The semantic analysis phase verifies variable declarations and type checking within the context of the program.",
+                "image": null
+            },
+            {
+                "question": "Token generation happens in which phase?",
+                "type": "radio",
+                "options": ["Lexical", "Syntax", "Semantic", "Optimization"],
+                "answer": "Lexical",
+                "explanation": "The lexical analysis phase converts source code into tokens (keywords, identifiers, etc.) using regular expressions.",
+                "image": null
+            },
+            {
+                "question": "Which phase generates intermediate representation (IR) code?",
+                "type": "radio",
+                "options": ["Lexical", "Syntax", "Intermediate", "Code Gen"],
+                "answer": "Intermediate",
+                "explanation": "The intermediate code generation phase creates platform-independent IR (like three-address code) from the syntax tree.",
+                "image": null
+            },
+            {
+                "question": "What converts an AST to three-address code?",
+                "type": "radio",
+                "options": ["Lexer", "Parser", "Intermediate Gen", "Optimizer"],
+                "answer": "Intermediate Gen",
+                "explanation": "The Intermediate Code Generator converts the Abstract Syntax Tree (AST) into three-address code for optimization.",
+                "image": null
+            },
+            {
+                "question": "Which is NOT a compilation phase?",
+                "type": "radio",
+                "options": ["Lexical", "Runtime", "Syntax", "Code Gen"],
+                "answer": "Runtime",
+                "explanation": "Runtime execution happens after compilation. The main phases are Lexical, Syntax, Semantic, Intermediate, Optimization, and Code Generation.",
+                "image": null
+            }
+        ]
+    },
+
+    "Grammar Derivation": {
+        "description": "Covers context-free grammars, derivation processes, and parsing techniques.",
+        "questions": [
+            {
+                "question": "Which derivation starts with the leftmost non-terminal?",
+                "type": "radio",
+                "options": ["Leftmost", "Rightmost", "Bottom-up", "Random"],
+                "answer": "Leftmost",
+                "explanation": "Leftmost derivation always expands the leftmost non-terminal first, used in top-down parsing.",
+                "image": null
+            },
+            {
+                "question": "Which derivation starts with the rightmost non-terminal?",
+                "type": "radio",
+                "options": ["Leftmost", "Rightmost", "Bottom-up", "Random"],
+                "answer": "Rightmost",
+                "explanation": "Rightmost derivation expands the rightmost non-terminal first, used in bottom-up parsing.",
+                "image": null
+            },
+            {
+                "question": "Is the grammar 'E → E+E | E*E | id' ambiguous?",
+                "type": "radio",
+                "options": ["Yes", "No"],
+                "answer": "Yes",
+                "explanation": "This grammar is ambiguous because there are multiple parse trees for expressions like 'id+id*id' due to unclear operator precedence.",
+                "image": null
+            },
+            {
+                "question": "Which of the following is a correct representation of a C++ 'for' loop grammar?",
+                "type": "radio",
+                "options": [
+                    "ForLoop → 'for' '(' Init ';' Cond ';' Update ')' Body",
+                    "Loop → '(' 'for' Init Cond Update ')'",
+                    "ForLoop → '(' 'for' Statement ')'",
+                    "Loop → 'for' Statement"
+                ],
+                "answer": "ForLoop → 'for' '(' Init ';' Cond ';' Update ')' Body",
+                "explanation": "The correct grammar follows the C++ syntax: for keyword, parentheses with three expressions separated by semicolons, followed by the loop body.",
+                "image": null
+            },
+            {
+                "question": "What is the left-factored version of 'A → aB | aC'?",
+                "type": "radio",
+                "options": [
+                    "A → a A', A' → B | C",
+                    "A → a B C",
+                    "A → B | C",
+                    "A → a B | C"
+                ],
+                "answer": "A → a A', A' → B | C",
+                "explanation": "Left factoring removes common prefixes by introducing a new non-terminal (A') to handle the alternatives after the common 'a' symbol.",
+                "image": null
+            }
+        ]
+    },
+
+    "Regular Expressions": {
+        "description": "Pattern matching and text manipulation using regular expression syntax.",
+        "questions": [
+            {
+                "question": "Which regex pattern matches a valid email address?",
+                "type": "radio",
+                "options": [
+                    "^[\\w.%+-]+@[\\w.-]+\\.[a-zA-Z]{2,}$",
+                    "^\\d{3}-\\d{3}-\\d{4}$",
+                    "^[a-zA-Z_][a-zA-Z0-9_]*$",
+                    "^[01]+$"
+                ],
+                "answer": "^[\\w.%+-]+@[\\w.-]+\\.[a-zA-Z]{2,}$",
+                "explanation": "This regex validates emails by checking for valid characters before @, a domain name, and a TLD of at least 2 letters.",
+                "image": null
+            },
+            {
+                "question": "Which regex matches a floating point number?",
+                "type": "radio",
+                "options": [
+                    "^[+-]?(\\d+\\.?\\d*|\\.\\d+)([eE][+-]?\\d+)?$",
+                    "^[01]+$",
+                    "^\\d{4}-\\d{2}-\\d{2}$",
+                    "^[a-zA-Z_][a-zA-Z0-9_]*$"
+                ],
+                "answer": "^[+-]?(\\d+\\.?\\d*|\\.\\d+)([eE][+-]?\\d+)?$",
+                "explanation": "This pattern allows optional sign, decimal points (with numbers on either side), and scientific notation exponents.",
+                "image": null
+            },
+            {
+                "question": "Which regex matches a valid C-style identifier?",
+                "type": "radio",
+                "options": [
+                    "^[a-zA-Z_][a-zA-Z0-9_]*$",
+                    "^\\d{3}-\\d{3}-\\d{4}$",
+                    "^[01]+$",
+                    "^\\w+@\\w+\\.\\w+$"
+                ],
+                "answer": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+                "explanation": "C identifiers must start with a letter or underscore, followed by letters, digits, or underscores.",
+                "image": null
+            },
+            {
+                "question": "Which regex pattern matches a binary number?",
+                "type": "radio",
+                "options": [
+                    "^[01]+$",
+                    "^\\d+$",
+                    "^[a-zA-Z]+$",
+                    "^\\w+@\\w+\\.\\w+$"
+                ],
+                "answer": "^[01]+$",
+                "explanation": "A binary number consists only of 0s and 1s. The regex ^[01]+$ matches one or more of these digits.",
+                "image": null
+            },
+            {
+                "question": "Which regex pattern matches an HTML tag?",
+                "type": "radio",
+                "options": [
+                    "<([a-z]+)([^<]+)*(?:>(.*)<\\/\\1>|\\s+\\/>)",
+                    "^\\d{4}-\\d{2}-\\d{2}$",
+                    "^\\w+@\\w+\\.\\w+$",
+                    "^[01]+$"
+                ],
+                "answer": "<([a-z]+)([^<]+)*(?:>(.*)<\\/\\1>|\\s+\\/>)",
+                "explanation": "This regex matches both opening/closing tags (<div>...</div>) and self-closing tags (<img/>), capturing the tag name and attributes.",
+                "image": null
+            }
+        ]
+    }
+}
