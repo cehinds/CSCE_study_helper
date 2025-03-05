@@ -20,6 +20,10 @@ A GUI-based study tool for testing knowledge in various CS topics, including ope
 - Visual feedback for correct/incorrect answers
 - Explanation display after attempts
 - Image support for questions
+![Right](https://github.com/user-attachments/assets/5116480e-e62f-4805-9468-37c25457828c)
+![Wrong](https://github.com/user-attachments/assets/a483f360-6ba4-4451-9e04-86bc246e031f)
+
+
 
 ## Requirements
 
