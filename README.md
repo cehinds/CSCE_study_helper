@@ -2,7 +2,8 @@
 
 A GUI-based study tool for testing knowledge in various CS topics, including operating systems, process management, scheduling, synchronization, and memory systems. Built with Python/Tkinter.
 
-![Study App Demo](demo_screenshot.png) *(Screenshot placeholder)*
+![Study App Demo](https://github.com/user-attachments/assets/71a798ef-5b9e-4ac1-b60e-3182f2c07824)
+
 
 ## Features
 
