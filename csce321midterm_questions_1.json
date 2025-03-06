@@ -1,0 +1,998 @@
+{
+    "Operating Systems: Internals and Design Principles - Chapter 1": {
+        "description": "Covers the fundamental components of computer systems, including hardware, operating systems, applications, and users, as well as the role of the operating system in managing system resources.",
+        "questions": [
+            {
+                "question": "Which of the following is NOT considered a main component of a computer system?",
+                "type": "radio",
+                "options": ["Hardware", "Operating System", "Applications", "Users", "Network Interface"],
+                "answer": "Network Interface",
+                "explanation": "The primary components are hardware, operating system, applications, and users. Network interfaces are part of hardware but not considered a main component on their own.",
+                "image": ""
+            },
+            {
+                "question": "What is the primary function of an operating system?",
+                "type": "radio",
+                "options": ["Manage hardware resources", "Run user applications", "Provide network connectivity", "Serve as a user interface", "All of the above"],
+                "answer": "Manage hardware resources",
+                "explanation": "The operating system's main role is to manage hardware resources such as CPU, memory, and I/O devices, ensuring efficient and fair allocation among applications and users.",
+                "image": ""
+            },
+            {
+                "question": "Which of the following is NOT a resource typically allocated by the operating system?",
+                "type": "radio",
+                "options": ["CPU time", "Memory space", "File-storage space", "I/O devices", "User preferences"],
+                "answer": "User preferences",
+                "explanation": "The operating system allocates resources like CPU time, memory, file storage, and I/O devices. User preferences are managed at the application level.",
+                "image": ""
+            },
+            {
+                "question": "What term is commonly used to refer to the operating system program?",
+                "type": "radio",
+                "options": ["Kernel", "Shell", "Driver", "Daemon", "Process"],
+                "answer": "Kernel",
+                "explanation": "The kernel is the core component of the operating system, managing system resources and communication between hardware and software.",
+                "image": ""
+            },
+            {
+                "question": "Which of the following is NOT typically a function of the operating system?",
+                "type": "radio",
+                "options": ["Memory management", "Process scheduling", "User authentication", "Data encryption", "Application execution"],
+                "answer": "Application execution",
+                "explanation": "While the operating system provides the environment for applications to run, the execution of applications is primarily managed by the application itself, with the OS providing necessary resources.",
+                "image": ""
+            },
+            {
+                "question": "What is an interrupt in the context of operating systems?",
+                "type": "radio",
+                "options": ["A signal to the processor to stop execution", "A mechanism to handle errors during program execution", "A method for programs to request system services", "A process that manages I/O operations"],
+                "answer": "A signal to the processor to stop execution",
+                "explanation": "An interrupt is a signal that prompts the operating system to stop work on one process and start work on another, facilitating multitasking and efficient resource management.",
+                "image": ""
+            },
+            {
+                "question": "How does the operating system determine the priority of multiple interrupts?",
+                "type": "radio",
+                "options": ["By the order in which interrupts are received", "By assigning different priorities to interrupts from different sources", "By the severity of the interrupt", "By the type of interrupting device", "All of the above"],
+                "answer": "By assigning different priorities to interrupts from different sources",
+                "explanation": "Multiple interrupts are managed by assigning priorities, ensuring that more critical interrupts are serviced before less critical ones.",
+                "image": ""
+            },
+            {
+                "question": "What characteristic is observed as we move up the memory hierarchy?",
+                "type": "radio",
+                "options": ["Decreased access speed", "Increased capacity", "Increased cost per bit",  "All of the above"],
+                "answer": "All of the above",
+                "explanation": "Moving up the memory hierarchy typically involves transitioning from faster, smaller, and more expensive memory to slower, larger, and less expensive memory.",
+                "image": ""
+            },
+            {
+                "question": "What is the distinction between spatial locality and temporal locality?",
+                "type": "radio",
+                "options": ["Spatial locality refers to the tendency of execution to involve a number of memory locations that are clustered; temporal locality refers to the reuse of specific data and/or resources within a relatively short time interval.", "Spatial locality refers to the reuse of specific data and/or resources within a relatively short time interval; temporal locality refers to the tendency of execution to involve a number of memory locations that are clustered.", "Spatial locality and temporal locality are two terms for the same concept.", "Spatial locality refers to the sequential access of memory; temporal locality refers to random access patterns.", "None of the above"],
+                "answer": "Spatial locality refers to the tendency of execution to involve a number of memory locations that are clustered; temporal locality refers to the reuse of specific data and/or resources within a relatively short time interval.",
+                "explanation": "Spatial locality refers to accessing memory locations that are close to each other, while temporal locality refers to accessing the same memory locations repeatedly within a short time frame.",
+                "image": ""
+            },
+            {
+                "question": "Which of the following is a trade-off that determines the size of the cache memory?",
+                "type": "radio",
+                "options": ["Speed versus cost", "Capacity versus reliability", "Power consumption versus data bandwidth", "Heat dissipation versus processing speed", "All of the above"],
+                "answer": "Speed versus cost",
+                "explanation": "Larger cache sizes can improve speed but also increase cost; thus, a balance must be struck between performance requirements and budget constraints.",
+                "image": ""
+            },
+            {
+                "question": "What is the difference between a multiprocessor and a multicore system?",
+                "type": "radio",
+                "options": ["A multiprocessor system has multiple processors on separate chips; a multicore system has multiple processors on a single chip.", "A multiprocessor system has multiple processors on a single chip; a multicore system has multiple processors on separate chips.", "There is no difference; the terms are interchangeable.", "A multiprocessor system refers to systems with multiple cores; a multicore system refers to systems with multiple processors.", "None of the above"],
+                "answer": "A multiprocessor system has multiple processors on separate chips; a multicore system has multiple processors on a single chip.",
+                "explanation": "Multiprocessor systems use multiple separate chips, each with its own processor, while multicore systems integrate multiple processors onto a single chip.",
+                "image": ""
+            }
+        ]
+    }, 
+    
+        "Operating Systems: Internals and Design Principles - Chapter 2": {
+            "description": "Explores the evolution of operating systems, their objectives, functions, and various types, including batch, multiprogrammed, and time-sharing systems.",
+            "questions": [
+                {
+                    "question": "Which of the following is NOT a primary function of an operating system?",
+                    "type": "radio",
+                    "options": ["Process management", "Memory management", "Hardware manufacturing", "File system management"],
+                    "answer": "Hardware manufacturing",
+                    "explanation": "An operating system manages processes, memory, and file systems but does not engage in hardware manufacturing, which is a function of hardware manufacturers.",
+                    "image": ""
+                },
+                {
+                    "question": "Which system evolved from simple batch systems to allow multiple jobs to run simultaneously by rapidly switching between them?",
+                    "type": "radio",
+                    "options": ["Multiprogramming systems", "Time-sharing systems", "Real-time systems", "Distributed systems"],
+                    "answer": "Multiprogramming systems",
+                    "explanation": "Multiprogramming systems enable multiple jobs to run simultaneously by quickly switching between them, improving CPU utilization.",
+                    "image": ""
+                },
+                {
+                    "question": "In a time-sharing system, how does the operating system allocate CPU time?",
+                    "type": "radio",
+                    "options": ["Equally among all users", "Based on user priority", "Based on job size", "Based on arrival time"],
+                    "answer": "Equally among all users",
+                    "explanation": "Time-sharing systems allocate CPU time equally among users to ensure fair access and responsiveness.",
+                    "image": ""
+                },
+                {
+                    "question": "Which of the following is a key characteristic of a real-time operating system?",
+                    "type": "radio",
+                    "options": ["Supports multiple users", "Provides immediate processing response", "Allows indefinite job execution", "Prioritizes job scheduling based on arrival time"],
+                    "answer": "Provides immediate processing response",
+                    "explanation": "Real-time operating systems are designed to process data and respond to inputs immediately, ensuring timely and predictable behavior.",
+                    "image": ""
+                },
+                {
+                    "question": "What is the primary purpose of a job control language (JCL) in batch processing systems?",
+                    "type": "radio",
+                    "options": ["Define job priorities", "Specify job execution parameters", "Manage job scheduling", "Monitor job performance"],
+                    "answer": "Specify job execution parameters",
+                    "explanation": "JCL is used to specify parameters such as which compiler to use and which data files to access, guiding the execution of batch jobs.",
+                    "image": ""
+                },
+                {
+                    "question": "Which of the following hardware features is essential for implementing multiprogramming in operating systems?",
+                    "type": "radio",
+                    "options": ["Multiple processors", "Memory protection", "High-speed disk drives", "Advanced graphics processors"],
+                    "answer": "Memory protection",
+                    "explanation": "Memory protection ensures that each program operates within its allocated memory space, preventing interference between programs in a multiprogramming environment.",
+                    "image": ""
+                },
+                {
+                    "question": "In the context of operating systems, what does the term 'monitor' refer to in simple batch systems?",
+                    "type": "radio",
+                    "options": ["A hardware device for displaying output", "A program that controls the sequence of events", "A user interface for job submission", "A tool for monitoring system performance"],
+                    "answer": "A program that controls the sequence of events",
+                    "explanation": "In simple batch systems, the monitor is a control program that manages the sequence of job executions, handling job scheduling and resource allocation.",
+                    "image": ""
+                },
+                {
+                    "question": "Which of the following is NOT typically a feature of time-sharing operating systems?",
+                    "type": "radio",
+                    "options": ["Rapid context switching", "User interaction through terminals", "Dedicated resources for each user", "Multiplexing CPU time among users"],
+                    "answer": "Dedicated resources for each user",
+                    "explanation": "Time-sharing systems aim to share resources among users, rather than dedicating resources exclusively to individual users, to maximize efficiency.",
+                    "image": ""
+                },
+                {
+                    "question": "What is the main advantage of multiprogramming over single-programming systems?",
+                    "type": "radio",
+                    "options": ["Simplified system design", "Reduced memory requirements", "Increased CPU utilization", "Enhanced user interactivity"],
+                    "answer": "Increased CPU utilization",
+                    "explanation": "Multiprogramming increases CPU utilization by allowing the processor to switch between programs, minimizing idle time.",
+                    "image": ""
+                },
+                {
+                    "question": "Which of the following operating system types is specifically designed to process data and respond to inputs within strict timing constraints?",
+                    "type": "radio",
+                    "options": ["Real-time operating systems", "Batch operating systems", "Time-sharing operating systems", "Multiprogramming operating systems"],
+                    "answer": "Real-time operating systems",
+                    "explanation": "Real-time operating systems are designed to process data and respond to inputs within strict timing constraints, ensuring predictable and timely behavior.",
+                    "image": ""
+                },
+                {
+                    "question": "In the evolution of operating systems, which system introduced the concept of a monitor to control job sequencing?",
+                    "type": "radio",
+                    "options": ["Simple batch systems", "Multiprogramming systems", "Time-sharing systems", "Real-time systems"],
+                    "answer": "Simple batch systems",
+                    "explanation": "Simple batch systems introduced the concept of a monitor, a control program that manages the sequence of job executions, improving efficiency over serial processing.",
+                    "image": ""
+                },
+                {
+                    "question": "Which of the following is a key benefit of time-sharing systems?",
+                    "type": "radio",
+                    "options": ["Increased system security", "Fair allocation of CPU time among users", "Simplified system maintenance", "Enhanced graphical user interfaces"],
+                    "answer": "Fair allocation of CPU time among users",
+                    "explanation": "Time-sharing systems allocate CPU time fairly among users, ensuring that each user receives a reasonable share of system resources.",
+                    "image": ""
+                },
+                {
+                    "question": "Which of the following is a characteristic feature of real-time operating systems?",
+                    "type": "radio",
+                    "options": ["Support for multiple programming languages", "Ability to handle large-scale computations", "Predictable response times to external events", "Emphasis on user-friendly interfaces"],
+                    "answer": "Predictable response times to external events",
+                    "explanation": "Real-time operating systems are designed to provide predictable response times to external events, ensuring that critical tasks are completed within specified time constraints.",
+                    "image": ""
+                }
+            ]
+        },
+        
+
+        
+    
+
+
+    "Operating Systems: Internals and Design Principles - Chapter 3": {
+        "description": "Process management including creation, termination, and synchronization.",
+        "questions": [
+            {
+                "question": "How many 'Hello' prints?\n#include <stdio.h>\n#include <unistd.h>\nint main() {\n    fork();\n    fork();\n    printf(\"Hello\\n\");\n}",
+                "type": "radio",
+                "options": ["2", "3", "4", "1"],
+                "answer": "4",
+                "explanation": "2 fork() calls create 4 processes.",
+                "image": ""
+            },
+            {
+                "question": "Total processes created?\nint main() {\n    if(fork() && fork()) fork();\n    printf(\"A\");\n}",
+                "type": "radio",
+                "options": ["3", "5", "7", "4"],
+                "answer": "5",
+                "explanation": "Logical AND creates 3 processes, final fork adds 2 more.",
+                "image": ""
+            },
+            {
+                "question": "What becomes of parent if child calls exit(0) first?",
+                "type": "radio",
+                "options": ["Zombie", "Orphan", "Normal termination", "Daemon"],
+                "answer": "Normal termination",
+                "explanation": "Parent continues execution unless it explicitly waits.",
+                "image": ""
+            },
+            {
+                "question": "Which is NOT part of PCB?",
+                "type": "radio",
+                "options": ["Process ID", "Stack pointer", "Heap memory", "Program counter"],
+                "answer": "Heap memory",
+                "explanation": "PCB tracks pointers to memory, not contents.",
+                "image": ""
+            },
+            {
+                "question": "What happens to orphans in Linux?",
+                "type": "radio",
+                "options": ["Terminated", "Adopted by init", "Become zombies", "Run forever"],
+                "answer": "Adopted by init",
+                "explanation": "init (PID 1) becomes new parent.",
+                "image": ""
+            },
+            {
+                "question": "Which system call preserves process ID?",
+                "type": "radio",
+                "options": ["fork()", "exec()", "wait()", "exit()"],
+                "answer": "exec()",
+                "explanation": "exec() replaces program but keeps PID.",
+                "image": ""
+            },
+            {
+                "question": "How many processes after:\nfork();\nif(pid == 0) exit(0);\nfork();",
+                "type": "radio",
+                "options": ["3", "2", "4", "1"],
+                "answer": "3",
+                "explanation": "Original parent forks twice, child exits early.",
+                "image": ""
+            },
+            {
+                "question": "What does waitpid() allow that wait() doesn't?",
+                "type": "radio",
+                "options": ["Wait for grandchildren", "Specify child PID", "Handle signals", "Prevent zombies"],
+                "answer": "Specify child PID",
+                "explanation": "waitpid() can target specific children.",
+                "image": ""
+            },
+            {
+                "question": "Which state transition is impossible?",
+                "type": "radio",
+                "options": ["Ready→Running", "Blocked→Ready", "Running→Blocked", "New→Blocked"],
+                "answer": "New→Blocked",
+                "explanation": "New processes must enter Ready state first.",
+                "image": ""
+            },
+            {
+                "question": "What happens when SIGCHLD is ignored?",
+                "type": "radio",
+                "options": ["Zombies accumulate", "Children become orphans", "Auto-reap children", "Parent terminates"],
+                "answer": "Auto-reap children",
+                "explanation": "Linux automatically reaps children when SIGCHLD is ignored.",
+                "image": ""
+            },
+        {
+            "question": "Which of the following is NOT typically included in a Process Control Block (PCB)?",
+            "type": "radio",
+            "options": ["Process ID", "Program Counter", "Processor Registers", "User Data Segment"],
+            "answer": "User Data Segment",
+            "explanation": "A PCB contains information like Process ID, Program Counter, and Processor Registers, but not the User Data Segment, which is part of the process's memory space.",
+            "image": ""
+        },
+        {
+            "question": "What is the primary role of the Process Control Block in an operating system?",
+            "type": "radio",
+            "options": ["Managing memory allocation", "Storing process execution history", "Maintaining process execution state information", "Handling user input and output"],
+            "answer": "Maintaining process execution state information",
+            "explanation": "The PCB stores information about a process's state, program counter, CPU registers, and memory management details, enabling the OS to manage process execution effectively.",
+            "image": ""
+        },
+        {
+            "question": "Which of the following events does NOT typically lead to the creation of a new process in an operating system?",
+            "type": "radio",
+            "options": ["User logs in to the system", "System boot-up", "User logs off from the system", "Application requests a new process for a child task"],
+            "answer": "User logs off from the system",
+            "explanation": "Creating a new process usually occurs during system boot-up, user login, or when an application spawns a new process. Logging off terminates processes rather than creating them.",
+            "image": ""
+        },
+        {
+            "question": "In a two-state process model, which states does a process transition between?",
+            "type": "radio",
+            "options": ["Ready and Running", "Running and Blocked", "New and Terminated", "Ready and Blocked"],
+            "answer": "Ready and Running",
+            "explanation": "In a two-state process model, processes transition between the Ready and Running states, depending on CPU availability and scheduling.",
+            "image": ""
+        },
+        {
+            "question": "Which of the following is NOT a typical reason for process creation in an operating system?",
+            "type": "radio",
+            "options": ["User request for a new application", "System initialization during boot-up", "Completion of a process's execution", "Request by an existing process to perform a task"],
+            "answer": "Completion of a process's execution",
+            "explanation": "Process creation occurs due to user requests, system initialization, or requests from existing processes. Completion of a process's execution leads to its termination, not creation.",
+            "image": ""
+        },
+        {
+            "question": "What is the significance of the program counter in a Process Control Block?",
+            "type": "radio",
+            "options": ["It stores the address of the next instruction to be executed", "It holds the process's priority level", "It indicates the process's current state", "It contains the process's memory allocation details"],
+            "answer": "It stores the address of the next instruction to be executed",
+            "explanation": "The program counter in the PCB keeps track of the address of the next instruction for the process, ensuring correct execution flow during context switches.",
+            "image": ""
+        },
+        {
+            "question": "Which of the following is a key function of process scheduling in an operating system?",
+            "type": "radio",
+            "options": ["Allocating memory to processes", "Assigning CPU time to processes", "Managing input and output operations", "Handling user authentication"],
+            "answer": "Assigning CPU time to processes",
+            "explanation": "Process scheduling determines which process gets CPU time and for how long, optimizing CPU utilization and system responsiveness.",
+            "image": ""
+        },
+        {
+            "question": "What happens to a process when it transitions from the Running state to the Blocked state?",
+            "type": "radio",
+            "options": ["It is terminated", "It is placed in the Ready queue", "It waits for an event to occur", "It continues execution without interruption"],
+            "answer": "It waits for an event to occur",
+            "explanation": "A process moves to the Blocked state when it cannot proceed until some external event, such as I/O completion, occurs.",
+            "image": ""
+        },
+        {
+            "question": "Which of the following is NOT a typical component of a Process Control Block?",
+            "type": "radio",
+            "options": ["Process ID", "Program Counter", "CPU Registers", "User Data Segment"],
+            "answer": "User Data Segment",
+            "explanation": "The PCB includes identifiers, program counters, and CPU registers but does not contain the User Data Segment, which resides in the process's memory space.",
+            "image": ""
+        },
+        {
+            "question": "In a multiprogramming environment, what is the role of the operating system in process management?",
+            "type": "radio",
+            "options": ["Ensuring each process has exclusive access to the CPU", "Managing the execution of multiple processes to maximize CPU utilization", "Preventing processes from accessing shared resources", "Assigning fixed time slots to each process for execution"],
+            "answer": "Managing the execution of multiple processes to maximize CPU utilization",
+            "explanation": "The OS manages multiple processes, allocating CPU time efficiently to ensure that the CPU is utilized effectively, minimizing idle time.",
+            "image": ""
+        },
+        {
+            "question": "Which of the following is a primary responsibility of the operating system regarding process control?",
+            "type": "radio",
+            "options": ["Managing user input and output", "Scheduling process execution on the CPU", "Allocating memory to user applications", "Providing network connectivity services"],
+            "answer": "Scheduling process execution on the CPU",
+            "explanation": "The OS schedules processes for CPU execution, determining the order and allocation of CPU time to ensure efficient and fair process execution.",
+            "image": ""
+        },
+        {
+            "question": "What is the purpose of context switching in process management?",
+            "type": "radio",
+            "options": ["To switch the CPU's focus between user and kernel modes", "To save the state of a running process and load the state of another", "To allocate memory resources to different processes", "To handle interrupts from hardware devices"],
+            "answer": "To save the state of a running process and load the state of another",
+            "explanation": "Context switching allows the OS to suspend the execution of one process and resume another, ensuring multitasking and efficient CPU utilization.",
+            "image": ""
+        },
+        {
+            "question": "Which of the following states does a process transition to after it completes its execution?",
+            "type": "radio",
+            "options": ["Terminated", "Ready", "Blocked", "Running"],
+            "answer": "Terminated",
+            "explanation": "Upon completion, a process transitions to the Terminated state, indicating::contentReference[oaicite:0]{index=0}"
+        }, {
+            "question": "Which of the following is NOT typically included in a Process Control Block (PCB)?",
+            "type": "radio",
+            "options": ["Process ID", "Program Counter", "Processor Registers", "User Data Segment"],
+            "answer": "User Data Segment",
+            "explanation": "A PCB contains information like Process ID, Program Counter, and Processor Registers, but not the User Data Segment, which is part of the process's memory space.",
+            "image": ""
+        },
+        {
+            "question": "What is the primary role of the Process Control Block in an operating system?",
+            "type": "radio",
+            "options": ["Managing memory allocation", "Storing process execution history", "Maintaining process execution state information", "Handling user input and output"],
+            "answer": "Maintaining process execution state information",
+            "explanation": "The PCB stores information about a process's state, program counter, CPU registers, and memory management details, enabling the OS to manage process execution effectively.",
+            "image": ""
+        },
+        {
+            "question": "Which of the following events does NOT typically lead to the creation of a new process in an operating system?",
+            "type": "radio",
+            "options": ["User logs in to the system", "System boot-up", "User logs off from the system", "Application requests a new process for a child task"],
+            "answer": "User logs off from the system",
+            "explanation": "Creating a new process usually occurs during system boot-up, user login, or when an application spawns a new process. Logging off terminates processes rather than creating them.",
+            "image": ""
+        },
+        {
+            "question": "In a two-state process model, which states does a process transition between?",
+            "type": "radio",
+            "options": ["Ready and Running", "Running and Blocked", "New and Terminated", "Ready and Blocked"],
+            "answer": "Ready and Running",
+            "explanation": "In a two-state process model, processes transition between the Ready and Running states, depending on CPU availability and scheduling.",
+            "image": ""
+        },
+        {
+            "question": "Which of the following is NOT a typical reason for process creation in an operating system?",
+            "type": "radio",
+            "options": ["User request for a new application", "System initialization during boot-up", "Completion of a process's execution", "Request by an existing process to perform a task"],
+            "answer": "Completion of a process's execution",
+            "explanation": "Process creation occurs due to user requests, system initialization, or requests from existing processes. Completion of a process's execution leads to its termination, not creation.",
+            "image": ""
+        },
+        {
+            "question": "What is the significance of the program counter in a Process Control Block?",
+            "type": "radio",
+            "options": ["It stores the address of the next instruction to be executed", "It holds the process's priority level", "It indicates the process's current state", "It contains the process's memory allocation details"],
+            "answer": "It stores the address of the next instruction to be executed",
+            "explanation": "The program counter in the PCB keeps track of the address of the next instruction for the process, ensuring correct execution flow during context switches.",
+            "image": ""
+        },
+        {
+            "question": "Which of the following is a key function of process scheduling in an operating system?",
+            "type": "radio",
+            "options": ["Allocating memory to processes", "Assigning CPU time to processes", "Managing input and output operations", "Handling user authentication"],
+            "answer": "Assigning CPU time to processes",
+            "explanation": "Process scheduling determines which process gets CPU time and for how long, optimizing CPU utilization and system responsiveness.",
+            "image": ""
+        },
+        {
+            "question": "What happens to a process when it transitions from the Running state to the Blocked state?",
+            "type": "radio",
+            "options": ["It is terminated", "It is placed in the Ready queue", "It waits for an event to occur", "It continues execution without interruption"],
+            "answer": "It waits for an event to occur",
+            "explanation": "A process moves to the Blocked state when it cannot proceed until some external event, such as I/O completion, occurs.",
+            "image": ""
+        },
+        {
+            "question": "Which of the following is NOT a typical component of a Process Control Block?",
+            "type": "radio",
+            "options": ["Process ID", "Program Counter", "CPU Registers", "User Data Segment"],
+            "answer": "User Data Segment",
+            "explanation": "The PCB includes identifiers, program counters, and CPU registers but does not contain the User Data Segment, which resides in the process's memory space.",
+            "image": ""
+        },
+        {
+            "question": "In a multiprogramming environment, what is the role of the operating system in process management?",
+            "type": "radio",
+            "options": ["Ensuring each process has exclusive access to the CPU", "Managing the execution of multiple processes to maximize CPU utilization", "Preventing processes from accessing shared resources", "Assigning fixed time slots to each process for execution"],
+            "answer": "Managing the execution of multiple processes to maximize CPU utilization",
+            "explanation": "The OS manages multiple processes, allocating CPU time efficiently to ensure that the CPU is utilized effectively, minimizing idle time.",
+            "image": ""
+        },
+        {
+            "question": "Which of the following is a primary responsibility of the operating system regarding process control?",
+            "type": "radio",
+            "options": ["Managing user input and output", "Scheduling process execution on the CPU", "Allocating memory to user applications", "Providing network connectivity services"],
+            "answer": "Scheduling process execution on the CPU",
+            "explanation": "The OS schedules processes for CPU execution, determining the order and allocation of CPU time to ensure efficient and fair process execution.",
+            "image": ""
+        },
+        {
+            "question": "What is the purpose of context switching in process management?",
+            "type": "radio",
+            "options": ["To switch the CPU's focus between user and kernel modes", "To save the state of a running process and load the state of another", "To allocate memory resources to different processes", "To handle interrupts from hardware devices"],
+            "answer": "To save the state of a running process and load the state of another",
+            "explanation": "Context switching allows the OS to suspend the execution of one process and resume another, ensuring multitasking and efficient CPU utilization.",
+            "image": ""
+        },
+        {
+            "question": "Which of the following states does a process transition to after it completes its execution?",
+            "type": "radio",
+            "options": ["Terminated", "Ready", "Blocked", "Running"],
+            "answer": "Terminated",
+            "explanation": "Upon completion, a process transitions to the Terminated state, indicating::contentReference[oaicite:0]{index=0}"
+        },
+        {
+            "question": "Semaphore initialized to 3: wait(), wait(), signal(), wait(). Final value?",
+            "type": "radio",
+            "options": ["1", "0", "-1", "2"],
+            "answer": "1",
+            "explanation": "3→2→1→2→1 after operations.",
+            "image": ""
+        },
+        {
+            "question": "What occurs if mutex is omitted in producer-consumer?",
+            "type": "radio",
+            "options": ["Deadlock", "Race condition", "Starvation", "Priority inversion"],
+            "answer": "Race condition",
+            "explanation": "Without mutex, simultaneous buffer access corrupts data.",
+            "image": ""
+        },
+        {
+            "question": "What causes dining philosophers deadlock?",
+            "type": "radio",
+            "options": [
+                "All pick left chopstick first",
+                "Uneven number of philosophers",
+                "Using mutexes",
+                "Asymmetric picking order"
+            ],
+            "answer": "All pick left chopstick first",
+            "explanation": "Circular wait when all acquire left chopstick simultaneously.",
+            "image": ""
+        },
+        {
+            "question": "Which is NOT a semaphore type?",
+            "type": "radio",
+            "options": ["Counting", "Binary", "Named", "Priority"],
+            "answer": "Priority",
+            "explanation": "Semaphores are either counting/binary. 'Named' refers to IPC semaphores.",
+            "image": ""
+        },
+        {
+            "question": "What solves priority inversion?",
+            "type": "radio",
+            "options": [
+                "Priority inheritance",
+                "Round-robin scheduling",
+                "Aging",
+                "Spinlocks"
+            ],
+            "answer": "Priority inheritance",
+            "explanation": "Temporarily raises low-priority process's priority during resource access.",
+            "image": ""
+        }
+
+        ]
+    },
+    "Operating Systems: Internals and Design Principles - Chapter 5": {
+        "description": "Concurrency control with semaphores and synchronization.",
+        "questions": [
+            {
+                "question": "Semaphore value after: init(3), wait(), wait(), signal(), wait()?",
+                "type": "radio",
+                "options": ["1", "0", "-1", "2"],
+                "answer": "1",
+                "explanation": "3→2→1→2→1.",
+                "image": ""
+            },
+            {
+                "question": "Missing mutex in producer-consumer causes?",
+                "type": "radio",
+                "options": ["Deadlock", "Race", "Starvation", "Priority inversion"],
+                "answer": "Race",
+                "explanation": "Simultaneous buffer access corrupts data.",
+                "image": ""
+            },
+            {
+                "question": "Dining philosophers deadlock condition?",
+                "type": "radio",
+                "options": ["All grab left first", "Even count", "Use mutexes", "Asymmetric order"],
+                "answer": "All grab left first",
+                "explanation": "Creates circular wait.",
+                "image": ""
+            },
+            {
+                "question": "What solves priority inversion?",
+                "type": "radio",
+                "options": ["Aging", "Inheritance", "Round-robin", "Spinlocks"],
+                "answer": "Inheritance",
+                "explanation": "Priority inheritance temporarily elevates low-priority processes.",
+                "image": ""
+            },
+            {
+                "question": "Which isn't a deadlock condition?",
+                "type": "radio",
+                "options": ["Mutual exclusion", "Hold & wait", "Aging", "No preemption"],
+                "answer": "Aging",
+                "explanation": "Aging solves starvation, unrelated to deadlock.",
+                "image": ""
+            },
+            {
+                "question": "Monitor vs semaphore advantage?",
+                "type": "radio",
+                "options": ["Faster", "Built-in mutual exclusion", "No busy waiting", "Works distributed"],
+                "answer": "Built-in mutual exclusion",
+                "explanation": "Monitors encapsulate synchronization.",
+                "image": ""
+            },
+            {
+                "question": "Readers-writers problem priority?",
+                "type": "radio",
+                "options": ["Readers first", "Writers first", "FIFO", "Random"],
+                "answer": "Depends on implementation",
+                "explanation": "Both approaches exist; no single correct answer.",
+                "image": ""
+            },
+            {
+                "question": "Atomic operation definition?",
+                "type": "radio",
+                "options": [
+                    "Uninterruptible",
+                    "Uses mutexes",
+                    "Kernel-mode only",
+                    "Multi-step"
+                ],
+                "answer": "Uninterruptible",
+                "explanation": "Atomic ops complete without interference.",
+                "image": ""
+            },
+            {
+                "question": "What's a spinlock?",
+                "type": "radio",
+                "options": [
+                    "Busy-wait mutex",
+                    "Kernel semaphore",
+                    "Thread scheduler",
+                    "Memory barrier"
+                ],
+                "answer": "Busy-wait mutex",
+                "explanation": "Spins in loop while waiting for lock.",
+                "image": ""
+            },
+            {
+                "question": "Which ensures happens-before?",
+                "type": "radio",
+                "options": ["Mutex", "Volatile", "Atomic", "All of above"],
+                "answer": "All of above",
+                "explanation": "All enforce memory visibility guarantees.",
+                "image": ""
+            }
+        ]
+    },
+    "Operating Systems: Internals and Design Principles - Chapter 9": {
+        "description": "CPU scheduling algorithms and analysis.",
+        "questions": [
+            {
+                "question": "Average wait for [6,3,1] with RR (q=2)?",
+                "type": "radio",
+                "options": ["4.67", "5.0", "3.33", "6.0"],
+                "answer": "4.67",
+                "explanation": "Wait times = (8+4+2)/3 = 4.67.",
+                "image": ""
+            },
+            {
+                "question": "Optimal scheduling with future knowledge?",
+                "type": "radio",
+                "options": ["FCFS", "RR", "SJF", "Priority"],
+                "answer": "SJF",
+                "explanation": "Shortest Job First minimizes wait times.",
+                "image": ""
+            },
+            {
+                "question": "FCFS drawback?",
+                "type": "radio",
+                "options": ["Starvation", "Convoy effect", "Complexity", "Preemption"],
+                "answer": "Convoy effect",
+                "explanation": "Long jobs delay short ones.",
+                "image": ""
+            },
+            {
+                "question": "MLFQ key feature?",
+                "type": "radio",
+                "options": ["Fixed queues", "Process migration", "Aging", "Time slices"],
+                "answer": "Process migration",
+                "explanation": "Moves processes between priority queues.",
+                "image": ""
+            },
+            {
+                "question": "SRT drawback?",
+                "type": "radio",
+                "options": ["Starvation", "Overhead", "Accuracy", "Fairness"],
+                "answer": "Overhead",
+                "explanation": "Frequent preemptions increase context switches.",
+                "image": ""
+            },
+            {
+                "question": "Which is preemptive?",
+                "type": "radio",
+                "options": ["FCFS", "SJF", "RR", "Priority"],
+                "answer": "RR",
+                "explanation": "Round Robin uses time slicing.",
+                "image": ""
+            },
+            {
+                "question": "Starvation solution?",
+                "type": "radio",
+                "options": ["Aging", "Mutexes", "Deadlock", "Preemption"],
+                "answer": "Aging",
+                "explanation": "Gradually increases priority of waiting processes.",
+                "image": ""
+            },
+            {
+                "question": "Real-time scheduling requirement?",
+                "type": "radio",
+                "options": ["Predictability", "Fairness", "Throughput", "Simplicity"],
+                "answer": "Predictability",
+                "explanation": "Must meet strict timing deadlines.",
+                "image": ""
+            },
+            {
+                "question": "Multilevel queue vs MLFQ?",
+                "type": "radio",
+                "options": [
+                    "MLFQ has fixed queues",
+                    "MLQ allows migration",
+                    "MLFQ adjusts priorities",
+                    "Same concept"
+                ],
+                "answer": "MLFQ adjusts priorities",
+                "explanation": "MLFQ dynamically changes queue levels.",
+                "image": ""
+            },
+            {
+                "question": "Turnaround time formula?",
+                "type": "radio",
+                "options": [
+                    "Finish - arrival",
+                    "Wait + service",
+                    "Response + service",
+                    "Finish - start"
+                ],
+                "answer": "Finish - arrival",
+                "explanation": "Total time from arrival to completion.",
+                "image": ""
+            }, 
+            {
+                "question": "For burst times [6,3,1], average wait time using RR (quantum=2)?",
+                "type": "radio",
+                "options": ["4.67", "5.0", "3.33", "6.0"],
+                "answer": "4.67",
+                "explanation": "Execution order: P1(2)→P2(2)→P3(1)→P1(2)→P2(1)→P1(2). Wait times=(8+4+2)/3=4.67.",
+                "image": ""
+            },
+            {
+                "question": "Which algorithm minimizes average wait time with future knowledge?",
+                "type": "radio",
+                "options": ["FCFS", "RR", "SJF", "Priority"],
+                "answer": "SJF",
+                "explanation": "Shortest Job First (SJF) is optimal but requires knowing burst times.",
+                "image": ""
+            },
+            {
+                "question": "What characterizes FCFS scheduling?",
+                "type": "radio",
+                "options": [
+                    "Preemptive",
+                    "Convoy effect",
+                    "Dynamic priorities",
+                    "Time slices"
+                ],
+                "answer": "Convoy effect",
+                "explanation": "Long process delays short ones behind it (non-preemptive).",
+                "image": ""
+            },
+            {
+                "question": "Which is true about multilevel feedback queues?",
+                "type": "radio",
+                "options": [
+                    "Processes can move between queues",
+                    "Uses only FCFS scheduling",
+                    "Requires knowing burst times",
+                    "Has fixed priority levels"
+                ],
+                "answer": "Processes can move between queues",
+                "explanation": "MLFQ dynamically adjusts priorities based on process behavior.",
+                "image": ""
+            },
+            {
+                "question": "What's the main drawback of SRT scheduling?",
+                "type": "radio",
+                "options": [
+                    "Starvation of long jobs",
+                    "High context-switch overhead",
+                    "Requires time slices",
+                    "Difficult implementation"
+                ],
+                "answer": "Starvation of long jobs",
+                "explanation": "Preempting running processes for shorter ones increases overhead.",
+                "image": ""
+            }
+        ]
+    },
+
+
+
+
+
+
+    "Semaphore Questions": {
+        "description": "Focus on semaphore operations, synchronization, and concurrency control.",
+        "questions": [
+            {
+                "question": "A semaphore initialized to 5 undergoes: wait(), wait(), signal(), wait(). What is its final value?",
+                "type": "radio",
+                "options": ["3", "2", "4", "1"],
+                "answer": "3",
+                "explanation": "5 → 4 → 3 → 4 → 3 after operations."
+            },
+            {
+                "question": "What problem arises if a binary semaphore isn't used for mutual exclusion in the producer-consumer problem?",
+                "type": "radio",
+                "options": ["Deadlock", "Race Condition", "Starvation", "Priority Inversion"],
+                "answer": "Race Condition",
+                "explanation": "Multiple threads may simultaneously modify the buffer."
+            },
+            {
+                "question": "Which scenario causes a deadlock in the dining philosophers problem?",
+                "type": "radio",
+                "options": [
+                    "All philosophers pick left chopstick first",
+                    "Odd-numbered philosophers eat first",
+                    "Using mutex locks",
+                    "Asymmetric picking order"
+                ],
+                "answer": "All philosophers pick left chopstick first",
+                "explanation": "Creates circular waiting for resources."
+            },
+            {
+                "question": "What solves priority inversion?",
+                "type": "radio",
+                "options": ["Aging", "Priority Inheritance", "Round-Robin", "Spinlocks"],
+                "answer": "Priority Inheritance",
+                "explanation": "Temporarily elevates low-priority process's priority."
+            },
+            {
+                "question": "Which is NOT a valid semaphore initialization?",
+                "type": "radio",
+                "options": ["sem_init(0)", "sem_init(1)", "sem_init(-3)", "sem_init(5)"],
+                "answer": "sem_init(-3)",
+                "explanation": "Semaphores cannot start with negative values."
+            },
+            {
+                "question": "What is a spinlock?",
+                "type": "radio",
+                "options": [
+                    "Busy-wait synchronization",
+                    "Kernel-level semaphore",
+                    "Thread scheduler",
+                    "Memory barrier"
+                ],
+                "answer": "Busy-wait synchronization",
+                "explanation": "Repeatedly checks lock availability in a loop."
+            },
+            {
+                "question": "In readers-writers, allowing new readers while writers wait causes:",
+                "type": "radio",
+                "options": ["Starvation", "Deadlock", "Race", "Overhead"],
+                "answer": "Starvation",
+                "explanation": "Writers may never get access if readers keep coming."
+            },
+            {
+                "question": "Which atomic operation ensures mutual exclusion?",
+                "type": "radio",
+                "options": ["test_and_set()", "malloc()", "printf()", "fork()"],
+                "answer": "test_and_set()",
+                "explanation": "Hardware instruction for lock implementation."
+            },
+            {
+                "question": "What is the purpose of a counting semaphore?",
+                "type": "radio",
+                "options": [
+                    "Manage multiple identical resources",
+                    "Implement mutual exclusion",
+                    "Prevent priority inversion",
+                    "Handle interrupts"
+                ],
+                "answer": "Manage multiple identical resources",
+                "explanation": "Tracks available instances of a resource."
+            },
+            {
+                "question": "Which is TRUE about monitors?",
+                "type": "radio",
+                "options": [
+                    "Require explicit signal/wait",
+                    "Support distributed systems",
+                    "Have built-in mutual exclusion",
+                    "Use spinlocks"
+                ],
+                "answer": "Have built-in mutual exclusion",
+                "explanation": "Monitors encapsulate synchronization."
+            }
+        ]
+    },
+    "Fork/Exec Questions": {
+        "description": "Focus on process creation, termination, and execution using fork()/exec().",
+        "questions": [
+            {
+                "question": "How many times is 'Hello' printed?\n#include <unistd.h>\nint main() {\n    fork();\n    fork();\n    printf(\"Hello\\n\");\n}",
+                "type": "radio",
+                "options": ["2", "3", "4", "1"],
+                "answer": "4",
+                "explanation": "Two fork() calls create 4 processes."
+            },
+            {
+                "question": "What does fork() return in the child process?",
+                "type": "radio",
+                "options": ["0", "Child PID", "Parent PID", "-1"],
+                "answer": "0",
+                "explanation": "fork() returns 0 to the child, PID to parent."
+            },
+            {
+                "question": "What happens after execlp(\"ls\", \"ls\", NULL) succeeds?",
+                "type": "radio",
+                "options": [
+                    "Child continues execution",
+                    "Child runs ls and exits",
+                    "Parent terminates",
+                    "Process becomes zombie"
+                ],
+                "answer": "Child runs ls and exits",
+                "explanation": "exec() replaces the child’s memory image."
+            },
+            {
+                "question": "How many processes exist after:\nfork();\nif (fork()) { fork(); }",
+                "type": "radio",
+                "options": ["4", "5", "6", "3"],
+                "answer": "5",
+                "explanation": "Original → 2 → 3 → 5 (conditional fork)."
+            },
+            {
+                "question": "What is a zombie process?",
+                "type": "radio",
+                "options": [
+                    "Child that exited but wasn't reaped",
+                    "Parent that exited before child",
+                    "Process stuck in infinite loop",
+                    "Orphaned process"
+                ],
+                "answer": "Child that exited but wasn't reaped",
+                "explanation": "Zombies remain until parent calls wait()."
+            },
+            {
+                "question": "Which exec() variant uses PATH environment variable?",
+                "type": "radio",
+                "options": ["execl()", "execvp()", "execv()", "execle()"],
+                "answer": "execvp()",
+                "explanation": "execvp() searches PATH for the executable."
+            },
+            {
+                "question": "What happens if fork() fails?",
+                "type": "radio",
+                "options": [
+                    "Returns -1",
+                    "Terminates process",
+                    "Creates zombie",
+                    "Switches to thread"
+                ],
+                "answer": "Returns -1",
+                "explanation": "fork() returns -1 on failure (e.g., no memory)."
+            },
+            {
+                "question": "Which code creates an orphan?\nA) if (fork() == 0) sleep(10);\nB) if (fork() > 0) exit(0);",
+                "type": "radio",
+                "options": ["A", "B", "Both", "Neither"],
+                "answer": "B",
+                "explanation": "Parent exits first → child becomes orphan."
+            },
+            {
+                "question": "What is true about exec()?",
+                "type": "radio",
+                "options": [
+                    "Creates new process",
+                    "Preserves open files",
+                    "Returns on success",
+                    "Changes PID"
+                ],
+                "answer": "Preserves open files",
+                "explanation": "exec() reuses process ID and file descriptors."
+            },
+            {
+                "question": "How to avoid zombies?",
+                "type": "radio",
+                "options": [
+                    "Call wait()",
+                    "Use exec()",
+                    "Ignore SIGCHLD",
+                    "All of the above"
+                ],
+                "answer": "All of the above",
+                "explanation": "wait() reaps, exec() replaces, SIGCHLD=IGNORE auto-reaps."
+            }
+        ]
+    }
+}

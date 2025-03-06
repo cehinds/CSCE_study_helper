@@ -1,0 +1,246 @@
+{
+    "Operating Systems: Chapter 1 & Lecture 1": {
+        "description": "Covers the basic principles of operating systems, including OS objectives, computer system structure, and key OS components.",
+        "questions": [
+            {
+                "question": "What is the primary goal of an operating system?",
+                "type": "radio",
+                "options": [
+                    "Execute user programs",
+                    "Make the computer convenient to use",
+                    "Use hardware efficiently",
+                    "All of the above"
+                ],
+                "answer": "All of the above",
+                "explanation": "The OS aims to execute programs, provide convenience, and ensure efficient hardware use."
+            },
+            {
+                "question": "Which component of a computer system provides basic computing resources?",
+                "type": "radio",
+                "options": ["Operating System", "Application Programs", "Hardware", "Users"],
+                "answer": "Hardware",
+                "explanation": "Hardware (CPU, memory, I/O devices) provides the basic computing resources."
+            },
+            {
+                "question": "What is the role of the operating system in a computer system?",
+                "type": "radio",
+                "options": [
+                    "Control hardware resources",
+                    "Execute application programs",
+                    "Act as an intermediary between users and hardware",
+                    "All of the above"
+                ],
+                "answer": "All of the above",
+                "explanation": "The OS controls hardware, executes programs, and acts as an intermediary."
+            },
+            {
+                "question": "Which of the following is NOT a component of a computer system?",
+                "type": "radio",
+                "options": ["Hardware", "Operating System", "Application Programs", "Compiler"],
+                "answer": "Compiler",
+                "explanation": "A compiler is a tool for software development, not a core component of the computer system."
+            },
+            {
+                "question": "What is the purpose of the system bus in a computer system?",
+                "type": "radio",
+                "options": [
+                    "Provide communication between CPU and memory",
+                    "Connect I/O devices to the CPU",
+                    "Enable communication between processors, memory, and I/O modules",
+                    "Store data permanently"
+                ],
+                "answer": "Enable communication between processors, memory, and I/O modules",
+                "explanation": "The system bus facilitates communication among the main components of the computer."
+            },
+            {
+                "question": "Which of the following is a characteristic of main memory?",
+                "type": "radio",
+                "options": ["Non-volatile", "Slow access time", "Volatile", "Expensive per bit"],
+                "answer": "Volatile",
+                "explanation": "Main memory is volatile, meaning it loses its contents when the computer is shut down."
+            },
+            {
+                "question": "What is the purpose of cache memory?",
+                "type": "radio",
+                "options": [
+                    "Store data permanently",
+                    "Provide fast access to frequently used data",
+                    "Act as secondary storage",
+                    "Manage I/O operations"
+                ],
+                "answer": "Provide fast access to frequently used data",
+                "explanation": "Cache memory is used to speed up access to frequently used data by storing it closer to the CPU."
+            },
+            {
+                "question": "Which of the following is NOT a function of the operating system?",
+                "type": "radio",
+                "options": [
+                    "Memory management",
+                    "Process scheduling",
+                    "File system management",
+                    "Hardware design"
+                ],
+                "answer": "Hardware design",
+                "explanation": "Hardware design is not a function of the OS; it is handled by hardware engineers."
+            },
+            {
+                "question": "What is the purpose of interrupts in a computer system?",
+                "type": "radio",
+                "options": [
+                    "Improve processor utilization",
+                    "Increase memory capacity",
+                    "Reduce power consumption",
+                    "Manage file systems"
+                ],
+                "answer": "Improve processor utilization",
+                "explanation": "Interrupts allow the processor to handle I/O operations efficiently, improving utilization."
+            },
+            {
+                "question": "Which of the following is an example of an I/O device?",
+                "type": "radio",
+                "options": ["CPU", "Cache", "Keyboard", "System Bus"],
+                "answer": "Keyboard",
+                "explanation": "The keyboard is an I/O device used for input."
+            },
+            {
+                "question": "What is the purpose of the memory hierarchy?",
+                "type": "radio",
+                "options": [
+                    "Increase memory capacity",
+                    "Reduce memory cost",
+                    "Balance speed, cost, and capacity",
+                    "Improve processor speed"
+                ],
+                "answer": "Balance speed, cost, and capacity",
+                "explanation": "The memory hierarchy balances speed, cost, and capacity by using different types of memory."
+            },
+            {
+                "question": "Which of the following is true about virtual memory?",
+                "type": "radio",
+                "options": [
+                    "It is faster than main memory",
+                    "It extends the capacity of main memory using disk storage",
+                    "It is non-volatile",
+                    "It is used to store cache data"
+                ],
+                "answer": "It extends the capacity of main memory using disk storage",
+                "explanation": "Virtual memory uses disk storage to extend the apparent size of main memory."
+            },
+            {
+                "question": "What is the role of the kernel in an operating system?",
+                "type": "radio",
+                "options": [
+                    "Manage user interfaces",
+                    "Handle low-level system operations",
+                    "Execute application programs",
+                    "Manage file systems"
+                ],
+                "answer": "Handle low-level system operations",
+                "explanation": "The kernel manages low-level operations like memory management, process scheduling, and I/O."
+            },
+            {
+                "question": "Which of the following is NOT a type of interrupt?",
+                "type": "radio",
+                "options": ["Program", "Timer", "I/O", "Cache"],
+                "answer": "Cache",
+                "explanation": "Cache is not a type of interrupt; it is a type of memory."
+            },
+            {
+                "question": "What is the purpose of direct memory access (DMA)?",
+                "type": "radio",
+                "options": [
+                    "Allow the CPU to access memory directly",
+                    "Enable I/O devices to access memory without CPU intervention",
+                    "Improve cache performance",
+                    "Manage virtual memory"
+                ],
+                "answer": "Enable I/O devices to access memory without CPU intervention",
+                "explanation": "DMA allows I/O devices to transfer data directly to/from memory, freeing the CPU."
+            },
+            {
+                "question": "Which of the following is a characteristic of a multiprocessor system?",
+                "type": "radio",
+                "options": [
+                    "Single CPU core",
+                    "Shared memory",
+                    "No I/O devices",
+                    "Non-volatile memory"
+                ],
+                "answer": "Shared memory",
+                "explanation": "Multiprocessor systems typically share memory among multiple processors."
+            },
+            {
+                "question": "What is the purpose of the program counter (PC) in a CPU?",
+                "type": "radio",
+                "options": [
+                    "Store data",
+                    "Hold the address of the next instruction to execute",
+                    "Manage I/O operations",
+                    "Control interrupts"
+                ],
+                "answer": "Hold the address of the next instruction to execute",
+                "explanation": "The program counter keeps track of the next instruction to execute."
+            },
+            {
+                "question": "Which of the following is NOT a goal of an operating system?",
+                "type": "radio",
+                "options": [
+                    "Execute user programs",
+                    "Make the computer convenient to use",
+                    "Maximize hardware utilization",
+                    "Design hardware components"
+                ],
+                "answer": "Design hardware components",
+                "explanation": "The OS does not design hardware; it manages existing hardware resources."
+            },
+            {
+                "question": "What is the purpose of the instruction register (IR) in a CPU?",
+                "type": "radio",
+                "options": [
+                    "Store the address of the next instruction",
+                    "Hold the current instruction being executed",
+                    "Manage I/O operations",
+                    "Control interrupts"
+                ],
+                "answer": "Hold the current instruction being executed",
+                "explanation": "The instruction register holds the current instruction being executed by the CPU."
+            },
+            {
+                "question": "Which of the following is true about the memory hierarchy?",
+                "type": "radio",
+                "options": [
+                    "Cache memory is slower than main memory",
+                    "Main memory is non-volatile",
+                    "Disk storage is faster than cache memory",
+                    "Cache memory is faster than main memory"
+                ],
+                "answer": "Cache memory is faster than main memory",
+                "explanation": "Cache memory is faster but smaller than main memory."
+            },
+            {
+                "question": "What is the purpose of the operating system's file system?",
+                "type": "radio",
+                "options": [
+                    "Manage memory allocation",
+                    "Control hardware resources",
+                    "Organize and store files",
+                    "Schedule processes"
+                ],
+                "answer": "Organize and store files",
+                "explanation": "The file system manages how files are stored and organized on disk."
+            },
+            {
+                "question": "Which of the following is NOT a function of the operating system's process management?",
+                "type": "radio",
+                "options": [
+                    "Process creation and termination",
+                    "Process scheduling",
+                    "Memory allocation",
+                    "Hardware design"
+                ],
+                "answer": "Hardware design",
+                "explanation": "Hardware design is not a function of process management."
+            }
+        ]
+    }
+}

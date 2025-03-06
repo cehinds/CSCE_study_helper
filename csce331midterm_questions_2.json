@@ -1,0 +1,1168 @@
+{
+    "Preliminaries of Programming Language Concepts": {
+        "description": "Fundamental concepts and reasons for studying programming languages.",
+        "questions": [
+            {
+                "question": "Which is NOT a primary reason to study programming language concepts according to the course?",
+                "type": "radio",
+                "options": ["Improved background for language selection", "Increased ability to design new languages", "Mastering specific IDE tools", "Better understanding of implementation significance"],
+                "answer": "Mastering specific IDE tools"
+            },
+            {
+                "question": "The 'Piraha people' analogy illustrates:",
+                "type": "radio",
+                "options": ["Cultural influences on language design", "Limitations in expressive power affecting thinking", "Importance of natural language processing", "Evolution of primitive programming languages"],
+                "answer": "Limitations in expressive power affecting thinking"
+            },
+            {
+                "question": "Which statement aligns with Dijkstra's view on programming tools?",
+                "type": "radio",
+                "options": ["Tools have no impact on problem-solving skills", "More tools always lead to better solutions", "Tools profoundly influence thinking habits", "Language choice is irrelevant to algorithm design"],
+                "answer": "Tools profoundly influence thinking habits"
+            },
+            {
+                "question": "What does the TIOBE Index primarily measure?",
+                "type": "radio",
+                "options": ["Compiler performance", "Programming language popularity", "Code reliability metrics", "Language standardization progress"],
+                "answer": "Programming language popularity"
+            },
+            {
+                "question": "Which domain primarily uses languages like LISP and Prolog?",
+                "type": "radio",
+                "options": ["Scientific computing", "Artificial Intelligence", "Systems programming", "Web development"],
+                "answer": "Artificial Intelligence"
+            },
+            {
+                "question": "A language suitable for systems programming due to efficiency is:",
+                "type": "radio",
+                "options": ["Python", "COBOL", "C", "MATLAB"],
+                "answer": "C"
+            },
+            {
+                "question": "Which is NOT a programming domain mentioned in the slides?",
+                "type": "radio",
+                "options": ["Business applications", "Quantum computing", "Web software", "Scientific applications"],
+                "answer": "Quantum computing"
+            }
+        ]
+    },
+    "Lexical Analysis": {
+        "description": "Understanding the role of lexical analysis in the compilation process.",
+        "questions": [
+            {
+                "question": "What is the primary role of a lexical analyzer in a compiler?",
+                "type": "radio",
+                "options": ["Generate abstract syntax trees", "Convert tokens to machine code", "Group characters into tokens", "Perform type checking"],
+                "answer": "Group characters into tokens"
+            },
+            {
+                "question": "Which of the following is NOT typically a token produced by a lexer?",
+                "type": "radio",
+                "options": ["Identifier", "Comment", "Integer literal", "Operator"],
+                "answer": "Comment"
+            },
+            {
+                "question": "Which error is detected during lexical analysis?",
+                "type": "radio",
+                "options": ["Undeclared variable", "Mismatched parentheses", "Illegal character (e.g., @#)", "Type mismatch"],
+                "answer": "Illegal character (e.g., @#)"
+            },
+            {
+                "question": "Short Answer: Why is lexical analysis separated from parsing?",
+                "type": "short_answer",
+                "expected_answer": "To simplify compiler design by modularizing tasks—lexers handle character grouping, parsers handle structure. Improves efficiency and error handling."
+            },
+            {
+                "question": "Which phase immediately follows lexical analysis in the compilation process?",
+                "type": "radio",
+                "options": ["Code generation", "Syntax analysis (parsing)", "Semantic analysis", "Optimization"],
+                "answer": "Syntax analysis (parsing)"
+            },
+            {
+                "question": "The output of the lexical analysis phase is called a:",
+                "type": "radio",
+                "options": ["Parse tree", "Token stream", "Symbol table", "Abstract syntax tree"],
+                "answer": "Token stream"
+            },
+            {
+                "question": "Which tool is commonly used to generate lexical analyzers?",
+                "type": "radio",
+                "options": ["YACC", "Bison", "Flex/Lex", "GCC"],
+                "answer": "Flex/Lex"
+            },
+            {
+                "question": "A sequence of characters that forms a single token is called a:",
+                "type": "radio",
+                "options": ["Lexeme", "Keyword", "Syntax unit", "Grammar rule"],
+                "answer": "Lexeme"
+            },
+            {
+                "question": "Short Answer: Give an example of a token and lexeme pair.",
+                "type": "short_answer",
+                "expected_answer": "Token: <INT_LITERAL>, Lexeme: '42'"
+            },
+            {
+                "question": "Which lexical analyzer output corresponds to `a = 5 + 3;`?",
+                "type": "radio",
+                "options": ["<ID,'a'> <EQ> <INT,5> <PLUS> <INT,3> <SEMI>", "a = 5 + 3;", "Assignment(a, Add(5, 3))", "Token stream with syntax errors"],
+                "answer": "<ID,'a'> <EQ> <INT,5> <PLUS> <INT,3> <SEMI>"
+            },
+            {
+                "question": "Short Answer: What is the purpose of *start conditions* in Flex/Lex?",
+                "type": "short_answer",
+                "expected_answer": "Handle nested comments."
+            }
+        ]
+    },
+
+    "Names, Scopes, and Bindings": {
+        "description": "Covers concepts related to static and dynamic scoping, variable lifetimes, symbol tables, and language-specific bindings.",
+        "questions": [
+            {
+                "question": "Static scoping resolves variable references based on:",
+                "type": "radio",
+                "options": ["Runtime call stack", "Physical code structure", "Dynamic type checks", "Garbage collection"],
+                "answer": "Physical code structure",
+                "explanation": "Static scoping determines the scope of a variable based on the structure of the program code.",
+                "image": ""
+            },
+            {
+                "question": "What is the scope of a variable declared inside a C function?",
+                "type": "radio",
+                "options": ["Global", "File scope", "Block scope", "Program scope"],
+                "answer": "Block scope",
+                "explanation": "A variable declared inside a C function has block scope, meaning it is accessible only within that function.",
+                "image": ""
+            },
+            {
+                "question": "Which language uses dynamic scoping by default?",
+                "type": "radio",
+                "options": ["C", "Python", "Lisp (some dialects)", "Java"],
+                "answer": "Lisp (some dialects)",
+                "explanation": "Lisp (some dialects) uses dynamic scoping, which resolves variable references based on the runtime call stack.",
+                "image": ""
+            },
+            {
+                "question": "A symbol table is used to track:",
+                "type": "radio",
+                "options": ["Variable lifetimes", "Memory addresses", "Identifiers and their bindings", "Machine code instructions"],
+                "answer": "Identifiers and their bindings",
+                "explanation": "A symbol table stores information about identifiers and their associated attributes, such as type and memory location.",
+                "image": ""
+            },
+            {
+                "question": "What is the lifetime of a local variable in Java?",
+                "type": "radio",
+                "options": ["Entire program execution", "Duration of the block where it’s declared", "Until garbage collected", "Until the function returns"],
+                "answer": "Until the function returns",
+                "explanation": "A local variable in Java is allocated during the function execution and deallocated when the function returns.",
+                "image": ""
+            },
+            {
+                "question": "Which term describes redefining a variable in an inner scope?",
+                "type": "radio",
+                "options": ["Overloading", "Shadowing", "Recursion", "Inheritance"],
+                "answer": "Shadowing",
+                "explanation": "Shadowing occurs when a variable in an inner scope takes precedence over a variable with the same name in an outer scope.",
+                "image": ""
+            },
+            {
+                "question": "A forward declaration in C is used to:",
+                "type": "radio",
+                "options": ["Allocate memory", "Declare a variable before its definition", "Resolve circular dependencies", "Initialize static variables"],
+                "answer": "Resolve circular dependencies",
+                "explanation": "A forward declaration is used to inform the compiler about the existence of a variable, function, or type before its actual definition.",
+                "image": ""
+            },
+            {
+                "question": "In Python, variables declared inside a function are:",
+                "type": "radio",
+                "options": ["Global by default", "Local by default", "Static by default", "Extern by default"],
+                "answer": "Local by default",
+                "explanation": "In Python, variables declared inside a function are local to that function unless explicitly declared as global.",
+                "image": ""
+            },
+            {
+                "question": "What is the output of this code under static scoping?",
+                "type": "radio",
+                "options": ["10", "20", "Error", "0"],
+                "answer": "20",
+                "explanation": "Under static scoping, the value of `x` in the outer function is used in the inner function.",
+                "image": "static_scoping_example.png"
+            },
+            {
+                "question": "What would the same code print under dynamic scoping?",
+                "type": "radio",
+                "options": ["10", "20", "Error", "0"],
+                "answer": "10",
+                "explanation": "Under dynamic scoping, the value of `x` in the calling scope (the outer function) is used in the inner function.",
+                "image": "dynamic_scoping_example.png"
+            },
+            {
+                "question": "Which is a key difference between static (C) and nonlocal (Python)?",
+                "type": "radio",
+                "options": ["static preserves value between calls; nonlocal accesses outer scope", "static allocates heap memory; nonlocal uses stack", "static enforces type safety; nonlocal allows dynamic typing", "Both are identical"],
+                "answer": "static preserves value between calls; nonlocal accesses outer scope",
+                "explanation": "In static scoping (C), a variable’s value persists between calls, whereas nonlocal (Python) refers to variables in outer scopes.",
+                "image": ""
+            },
+            {
+                "question": "Which is NOT a binding time?",
+                "type": "radio",
+                "options": ["Language design time", "Compile time", "Link time", "Variable declaration time"],
+                "answer": "Variable declaration time",
+                "explanation": "Binding time refers to the times when different attributes of a variable (such as type or memory location) are bound. 'Variable declaration time' is not a specific binding time.",
+                "image": ""
+            },
+            {
+                "question": "A variable declared extern in C has:",
+                "type": "radio",
+                "options": ["Block scope", "File scope", "Global scope", "No linkage"],
+                "answer": "Global scope",
+                "explanation": "A variable declared as `extern` in C has global scope and is defined elsewhere in the program.",
+                "image": ""
+            },
+            {
+                "question": "What is the visibility of a Java private variable?",
+                "type": "radio",
+                "options": ["Entire program", "Package", "Class", "Subclasses"],
+                "answer": "Class",
+                "explanation": "A `private` variable in Java is accessible only within the class it is declared.",
+                "image": ""
+            },
+            {
+                "question": "Which language allows implicit global variable declaration?",
+                "type": "radio",
+                "options": ["Java", "Python", "C++", "Rust"],
+                "answer": "Python",
+                "explanation": "In Python, variables that are assigned values outside of functions are automatically global unless explicitly declared as local.",
+                "image": ""
+            },
+            {
+                "question": "In C++, namespace is used to:",
+                "type": "radio",
+                "options": ["Manage variable lifetime", "Group related code and prevent name collisions", "Allocate dynamic memory", "Enforce type safety"],
+                "answer": "Group related code and prevent name collisions",
+                "explanation": "Namespaces in C++ are used to organize code and prevent name conflicts between identifiers.",
+                "image": ""
+            },
+            {
+                "question": "What does the global keyword do in Python?",
+                "type": "radio",
+                "options": ["Declares a variable as thread-safe", "Allows modification of a global variable inside a function", "Forces garbage collection", "Imports modules"],
+                "answer": "Allows modification of a global variable inside a function",
+                "explanation": "The `global` keyword allows a function to modify variables declared outside of it, at the global scope.",
+                "image": ""
+            },
+            {
+                "question": "Which is an example of overloading?",
+                "type": "radio",
+                "options": ["int add(int a, int b); float add(float a, float b);", "class B : public A { void foo() override; };", "int x = 5; { int x = 10; }", "extern int y;"],
+                "answer": "int add(int a, int b); float add(float a, float b);",
+                "explanation": "Overloading refers to defining multiple functions with the same name but different parameter types.",
+                "image": ""
+            },
+            {
+                "question": "What is the output?",
+                "type": "radio",
+                "options": ["5", "10", "15", "Error"],
+                "answer": "10",
+                "explanation": "The local variable `x` inside the function `func()` shadows the global variable `x`.",
+                "image": "output_example.png"
+            },
+            {
+                "question": "Which term describes the period when a variable is allocated memory?",
+                "type": "radio",
+                "options": ["Scope", "Lifetime", "Binding", "Linkage"],
+                "answer": "Lifetime",
+                "explanation": "The lifetime of a variable refers to the duration of time during which it exists and has memory allocated.",
+                "image": ""
+            },
+            {
+                "question": "Explain the difference between static and dynamic scoping with an example.",
+                "type": "short_answer",
+                "answer": "Static scoping: `inner()` uses `x=20` (lookup in outer function’s scope). Dynamic scoping: `inner()` uses `x=10` (lookup in caller’s scope).",
+                "image": "scoping_example.png"
+            },
+            {
+                "question": "What is the purpose of a symbol table during compilation?",
+                "type": "short_answer",
+                "answer": "Stores identifiers (variables, functions) and their attributes (type, scope, memory location) for semantic checks and code generation.",
+                "image": ""
+            }
+        ]
+    }, 
+"Programming Languages Syntax": {
+    "description": "Covers parsing, grammar, regular expressions, finite automata, grammar transformations, LL(1) parsing, and error handling in programming language syntax.",
+    "questions": [
+        {
+            "question": "Define the term 'derivation' in the context of formal grammars.",
+            "type": "radio",
+            "options": [
+                "A derivation is the process of applying production rules to generate strings from a start symbol in a formal grammar.",
+                "A derivation is the process of parsing a string using a formal grammar.",
+                "A derivation is a technique for resolving ambiguities in a grammar.",
+                "A derivation is a method of converting high-level code into machine code."
+            ],
+            "answer": "A derivation is the process of applying production rules to generate strings from a start symbol in a formal grammar.",
+            "image": ""
+        },
+        {
+            "question": "Differentiate between leftmost derivation and rightmost derivation. Provide an example of each.",
+            "type": "radio",
+            "options": [
+                "Leftmost derivation always expands the leftmost non-terminal first, while rightmost derivation expands the rightmost non-terminal first.",
+                "Leftmost derivation and rightmost derivation are the same, with no distinction.",
+                "Leftmost derivation expands all non-terminals before terminals, while rightmost derivation expands all terminals before non-terminals.",
+                "Leftmost derivation is used in recursive descent parsing, while rightmost derivation is used in predictive parsing."
+            ],
+            "answer": "Leftmost derivation always expands the leftmost non-terminal first, while rightmost derivation expands the rightmost non-terminal first.",
+            "image": ""
+        },
+        {
+            "question": "Given the grammar: S → aSb | ε, generate the string 'aaaabbbb' using leftmost derivation.",
+            "type": "radio",
+            "options": [
+                "S → aSb → aaSbb → aaaSbbb → aaaaSbbbb → aaaabbbb.",
+                "S → aSb → aSbb → aaSbbb → aaaSbbbb → aaaabbbb.",
+                "S → aSb → aSb → aaSbb → aaaSbbb → aaaabbbb.",
+                "S → aSb → aaSbb → aSbbb → aaaSbbbb → aaaabbbb."
+            ],
+            "answer": "S → aSb → aaSbb → aaaSbbb → aaaaSbbbb → aaaabbbb.",
+            "image": ""
+        },
+        {
+            "question": "For the grammar: E → E + E | E * E | (E) | id, show that the string 'id + id * id' has two distinct parse trees, proving ambiguity.",
+            "type": "radio",
+            "options": [
+                "There are two ways to parse the expression 'id + id * id' due to the precedence ambiguity between '+' and '*'.",
+                "The expression 'id + id * id' has only one valid parse tree.",
+                "The expression 'id + id * id' cannot be parsed with this grammar.",
+                "The expression 'id + id * id' is invalid due to missing parentheses."
+            ],
+            "answer": "There are two ways to parse the expression 'id + id * id' due to the precedence ambiguity between '+' and '*'.",
+            "image": ""
+        },
+        {
+            "question": "Explain why ambiguity in a grammar is problematic for programming language syntax.",
+            "type": "radio",
+            "options": [
+                "Ambiguity leads to multiple interpretations of the same input, making it difficult to create a consistent and predictable parser.",
+                "Ambiguity improves the flexibility of the syntax, allowing more complex expressions.",
+                "Ambiguity is only a problem in syntax analysis and does not affect semantic analysis.",
+                "Ambiguity helps in creating more optimized code generation."
+            ],
+            "answer": "Ambiguity leads to multiple interpretations of the same input, making it difficult to create a consistent and predictable parser.",
+            "image": ""
+        },
+        {
+            "question": "Construct a grammar for a C/C++ switch statement. Include rules for case, default, and nested statements.",
+            "type": "radio",
+            "options": [
+                "switch (expr) { case val1: stmt1; break; case val2: stmt2; break; default: stmt3; }",
+                "switch (expr) { if (expr) { stmt1; } else { stmt2; } }",
+                "switch (expr) { case val1, val2: stmt1; break; default: stmt3; }",
+                "switch { case val1; case val2; break; default: stmt; }"
+            ],
+            "answer": "switch (expr) { case val1: stmt1; break; case val2: stmt2; break; default: stmt3; }",
+            "image": ""
+        },
+        {
+            "question": "Write a grammar for a while loop in C/C++, including conditions and compound statements.",
+            "type": "radio",
+            "options": [
+                "while (condition) { stmt; }",
+                "while { condition; }",
+                "while condition { stmt; }",
+                "while (stmt) { condition; }"
+            ],
+            "answer": "while (condition) { stmt; }",
+            "image": ""
+        },
+        {
+            "question": "Identify whether the following grammar is ambiguous: S → if E then S | if E then S else S | other. Justify your answer.",
+            "type": "radio",
+            "options": [
+                "Yes, this grammar is ambiguous due to the dangling else problem, where it's unclear which 'if' the 'else' corresponds to.",
+                "No, this grammar is not ambiguous because 'else' is always tied to the nearest 'if'.",
+                "Yes, this grammar is ambiguous due to nested if-else conditions.",
+                "No, this grammar is unambiguous and resolves 'else' correctly."
+            ],
+            "answer": "Yes, this grammar is ambiguous due to the dangling else problem, where it's unclear which 'if' the 'else' corresponds to.",
+            "image": ""
+        },
+        {
+            "question": "Modify the grammar in Q8 to eliminate ambiguity using the 'dangling else' rule.",
+            "type": "radio",
+            "options": [
+                "S → if E then S else S | if E then S | other.",
+                "S → if E then S | else S | other.",
+                "S → if E then else S | if E then S | other.",
+                "S → if E then S | else if E then S | other."
+            ],
+            "answer": "S → if E then S else S | if E then S | other.",
+            "image": ""
+        },
+        {
+            "question": "Write a regular expression to match valid integer literals in C/C++ (e.g., decimal, octal, hexadecimal).",
+            "type": "radio",
+            "options": [
+                "[+-]?[0-9]+|0[xX][0-9a-fA-F]+|0[oO]?[0-7]+",
+                "[+-]?[0-9]*|0[xX][0-9a-fA-F]*|0[oO]?[0-7]*",
+                "[+-]?[0-9]+|0[x][0-9a-f]+|0[o]?[0-7]",
+                "[0-9]+|0[xX][a-fA-F0-9]+"
+            ],
+            "answer": "[+-]?[0-9]+|0[xX][0-9a-fA-F]+|0[oO]?[0-7]+",
+            "image": ""
+        },
+        {
+            "question": "Design a regular expression to validate email addresses with the format: name@domain.tld, where tld is 2-4 letters.",
+            "type": "radio",
+            "options": [
+                "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$",
+                "^[a-zA-Z0-9]+@[a-zA-Z0-9]+\\.[a-zA-Z]{2,4}$",
+                "^\\w+@\\w+\\.com$",
+                "^\\w+@\\w+\\.edu$"
+            ],
+            "answer": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$",
+            "image": ""
+        },
+        {
+            "question": "Explain the difference between (a|b)* and a*b* using examples.",
+            "type": "radio",
+            "options": [
+                "(a|b)* matches any combination of 'a' and 'b', including the empty string. a*b* matches any number of 'a's followed by any number of 'b's.",
+                "(a|b)* matches one or more 'a' or 'b'. a*b* matches exactly one 'a' followed by one 'b'.",
+                "(a|b)* matches at least one 'a' or 'b'. a*b* matches any combination of 'a's and 'b's.",
+                "(a|b)* matches a repeated 'a' or 'b'. a*b* matches a single 'a' followed by a single 'b'."
+            ],
+            "answer": "(a|b)* matches any combination of 'a' and 'b', including the empty string. a*b* matches any number of 'a's followed by any number of 'b's.",
+            "image": ""
+        }
+    ]
+}
+, 
+
+"Semantic Analysis": {
+    "description": "Covers the principles of semantic analysis, type systems, intermediate representations, and language-specific semantics in compiler design.",
+    "questions": [
+        {
+            "question": "Define semantic analysis in the context of compiler design. How does it differ from syntax analysis?",
+            "type": "radio",
+            "options": [
+                "Semantic analysis checks the meaning of the code, while syntax analysis checks its structure.",
+                "Semantic analysis checks the structure of the code, while syntax analysis checks its meaning.",
+                "Semantic analysis checks for runtime errors, while syntax analysis checks for compile-time errors.",
+                "There is no difference between semantic and syntax analysis."
+            ],
+            "answer": "Semantic analysis checks the meaning of the code, while syntax analysis checks its structure.",
+            "image": ""
+        },
+        {
+            "question": "List three primary tasks performed during semantic analysis.",
+            "type": "radio",
+            "options": [
+                "Symbol resolution, type checking, and scope management.",
+                "Lexical analysis, parsing, and code generation.",
+                "Error handling, machine code generation, and optimization.",
+                "Code generation, semantic checking, and debugging."
+            ],
+            "answer": "Symbol resolution, type checking, and scope management.",
+            "image": ""
+        },
+        {
+            "question": "Explain the role of the symbol table in semantic analysis. What information does it store?",
+            "type": "radio",
+            "options": [
+                "The symbol table stores information about variables, functions, and other identifiers, including their types, scopes, and memory locations.",
+                "The symbol table stores the source code of the program.",
+                "The symbol table stores machine code for fast execution.",
+                "The symbol table is used only for syntax analysis."
+            ],
+            "answer": "The symbol table stores information about variables, functions, and other identifiers, including their types, scopes, and memory locations.",
+            "image": ""
+        },
+        {
+            "question": "Differentiate between static semantics and dynamic semantics. Provide examples of each.",
+            "type": "radio",
+            "options": [
+                "Static semantics refers to compile-time checks (e.g., type checking), while dynamic semantics refers to runtime behavior (e.g., variable value assignments).",
+                "Static semantics is about variable declaration, while dynamic semantics is about function calls.",
+                "Static semantics checks for runtime errors, while dynamic semantics checks for compile-time errors.",
+                "Static semantics is irrelevant to compiler design."
+            ],
+            "answer": "Static semantics refers to compile-time checks (e.g., type checking), while dynamic semantics refers to runtime behavior (e.g., variable value assignments).",
+            "image": ""
+        },
+        {
+            "question": "What is type checking? How do compilers enforce type safety?",
+            "type": "radio",
+            "options": [
+                "Type checking verifies that operations are valid with respect to their data types, and compilers enforce type safety by rejecting invalid operations.",
+                "Type checking only occurs at runtime, and compilers enforce type safety by automatically converting types.",
+                "Type checking is used to ensure variables are declared before use, and compilers enforce type safety by tracking variable names.",
+                "Type checking is unrelated to type safety."
+            ],
+            "answer": "Type checking verifies that operations are valid with respect to their data types, and compilers enforce type safety by rejecting invalid operations.",
+            "image": ""
+        },
+        {
+            "question": "Compare strongly typed languages (e.g., Java) and weakly typed languages (e.g., C) with examples.",
+            "type": "radio",
+            "options": [
+                "Strongly typed languages require explicit type conversions, while weakly typed languages allow implicit conversions.",
+                "Strongly typed languages do not support data type conversion, while weakly typed languages allow all types to be converted automatically.",
+                "Strongly typed languages are faster, while weakly typed languages are slower.",
+                "There is no difference between strongly and weakly typed languages."
+            ],
+            "answer": "Strongly typed languages require explicit type conversions, while weakly typed languages allow implicit conversions.",
+            "image": ""
+        },
+        {
+            "question": "Describe type compatibility (e.g., name equivalence vs. structural equivalence). Use C and Python for comparison.",
+            "type": "radio",
+            "options": [
+                "Name equivalence requires types to have the same name, while structural equivalence compares their structure. C uses name equivalence, and Python uses structural equivalence.",
+                "Name equivalence and structural equivalence are the same concept and used interchangeably in C and Python.",
+                "C uses structural equivalence and Python uses name equivalence.",
+                "Neither C nor Python uses type compatibility."
+            ],
+            "answer": "Name equivalence requires types to have the same name, while structural equivalence compares their structure. C uses name equivalence, and Python uses structural equivalence.",
+            "image": ""
+        },
+        {
+            "question": "What is type coercion? Provide an example where implicit coercion might lead to unexpected behavior.",
+            "type": "radio",
+            "options": [
+                "Type coercion is the implicit conversion of one data type to another. In C, adding a float and an integer can lead to unexpected results if implicit coercion is applied.",
+                "Type coercion refers to explicit type conversions between different data types.",
+                "Type coercion only occurs at runtime in interpreted languages.",
+                "Type coercion causes errors in weakly typed languages."
+            ],
+            "answer": "Type coercion is the implicit conversion of one data type to another. In C, adding a float and an integer can lead to unexpected results if implicit coercion is applied.",
+            "image": ""
+        },
+        {
+            "question": "Explain the concept of type inference. How does it work in languages like Haskell or TypeScript?",
+            "type": "radio",
+            "options": [
+                "Type inference allows compilers to automatically deduce types based on the code context. In Haskell and TypeScript, the compiler infers types from the values assigned to variables.",
+                "Type inference requires manual type declaration for every variable.",
+                "Type inference is only used in statically typed languages.",
+                "Type inference is not supported in Haskell or TypeScript."
+            ],
+            "answer": "Type inference allows compilers to automatically deduce types based on the code context. In Haskell and TypeScript, the compiler infers types from the values assigned to variables.",
+            "image": ""
+        },
+        {
+            "question": "Identify the type errors in the following C code: int x = 'hello'; float y = 5; char* z = y + 3;",
+            "type": "radio",
+            "options": [
+                "Error 1: 'hello' is a string literal, not an integer. Error 2: Adding a float to an integer for pointer arithmetic is invalid.",
+                "Error 1: 'hello' is not a valid variable name. Error 2: The type of y is incorrect.",
+                "Error 1: The value of x is incompatible with its declared type. Error 2: Pointer arithmetic with a float is allowed.",
+                "There are no type errors in this code."
+            ],
+            "answer": "Error 1: 'hello' is a string literal, not an integer. Error 2: Adding a float to an integer for pointer arithmetic is invalid.",
+            "image": ""
+        },
+        {
+            "question": "Define Intermediate Representation (IR). Why is it used in compilers?",
+            "type": "radio",
+            "options": [
+                "Intermediate Representation is an abstract form of code used by compilers to optimize and translate code between high-level and low-level representations.",
+                "Intermediate Representation is used to store the original source code for debugging purposes.",
+                "Intermediate Representation is a low-level programming language used for code generation.",
+                "Intermediate Representation is only used for error handling in compilers."
+            ],
+            "answer": "Intermediate Representation is an abstract form of code used by compilers to optimize and translate code between high-level and low-level representations.",
+            "image": ""
+        },
+        {
+            "question": "Compare high-level IR (e.g., abstract syntax trees) and low-level IR (e.g., three-address code).",
+            "type": "radio",
+            "options": [
+                "High-level IR captures the structure and semantics of the program, while low-level IR is closer to machine code and is used for optimization and code generation.",
+                "High-level IR is used for error checking, while low-level IR is used for machine code generation.",
+                "High-level IR is less efficient than low-level IR.",
+                "There is no difference between high-level and low-level IR."
+            ],
+            "answer": "High-level IR captures the structure and semantics of the program, while low-level IR is closer to machine code and is used for optimization and code generation.",
+            "image": ""
+        },
+        {
+            "question": "Convert the expression x = (a + b) * (c - d / 2) into three-address code.",
+            "type": "radio",
+            "options": [
+                "t1 = d / 2; t2 = c - t1; t3 = a + b; x = t3 * t2;",
+                "t1 = a + b; t2 = c - d; t3 = t1 * t2; x = t3;",
+                "x = (a + b) * (c - d / 2);",
+                "No conversion is needed for this expression."
+            ],
+            "answer": "t1 = d / 2; t2 = c - t1; t3 = a + b; x = t3 * t2;",
+            "image": ""
+        },
+        {
+            "question": "Explain the purpose of annotated abstract syntax trees in semantic analysis.",
+            "type": "radio",
+            "options": [
+                "Annotated abstract syntax trees store additional information, such as types and symbol references, to assist with semantic analysis during compilation.",
+                "Annotated abstract syntax trees are used to generate the final machine code.",
+                "Annotated abstract syntax trees are used only for error handling in the compiler.",
+                "Annotated abstract syntax trees are not important in semantic analysis."
+            ],
+            "answer": "Annotated abstract syntax trees store additional information, such as types and symbol references, to assist with semantic analysis during compilation.",
+            "image": ""
+        }
+    ]
+}, 
+"Data Types / Control Flow": {
+    "description": "Covers topics on data types, control flow, symbol tables, error handling, memory management, and advanced programming concepts.",
+    "questions": [
+        {
+            "question": "What is the primary role of type coercion in semantic analysis?",
+            "type": "radio",
+            "options": [
+                "To enforce explicit type casting",
+                "To implicitly convert incompatible types during operations",
+                "To validate regular expressions",
+                "To eliminate left recursion in grammars"
+            ],
+            "answer": "To implicitly convert incompatible types during operations",
+            "explanation": "Type coercion allows the compiler to automatically convert operands to compatible types (e.g., converting `int` to `float` in mixed-type expressions).",
+            "image": ""
+        },
+        {
+            "question": "Which C code snippet contains a type error?",
+            "type": "radio",
+            "options": [
+                "int x = 5; float y = x;",
+                "char* s = \"hello\"; int x = s;",
+                "float y = 3.14; int z = (int)y;",
+                "int arr[5]; arr[0] = 10;"
+            ],
+            "answer": "char* s = \"hello\"; int x = s;",
+            "explanation": "Assigning a `char*` (string) to an `int` variable violates type compatibility.",
+            "image": ""
+        },
+        {
+            "question": "What does structural type equivalence mean?",
+            "type": "radio",
+            "options": [
+                "Types are equivalent if they have the same name",
+                "Types are equivalent if their internal structures match",
+                "Types are equivalent only if declared in the same scope",
+                "Types are equivalent after coercion"
+            ],
+            "answer": "Types are equivalent if their internal structures match",
+            "explanation": "Structural equivalence checks if two types have identical layouts (e.g., two structs with the same fields).",
+            "image": ""
+        },
+        {
+            "question": "Which step converts `x = (a + b) * (c - d / 2)` into three-address code?",
+            "type": "radio",
+            "options": [
+                "temp1 = d / 2; temp2 = c - temp1; temp3 = a + b; x = temp3 * temp2",
+                "temp1 = a + b; temp2 = d / 2; x = temp1 * (c - temp2)",
+                "x = a + b * c - d / 2",
+                "temp1 = a; temp2 = b; temp3 = temp1 + temp2"
+            ],
+            "answer": "temp1 = d / 2; temp2 = c - temp1; temp3 = a + b; x = temp3 * temp2",
+            "explanation": "Three-address code breaks complex expressions into simpler steps with temporary variables.",
+            "image": ""
+        },
+        {
+            "question": "An annotated abstract syntax tree (AST) includes:",
+            "type": "radio",
+            "options": [
+                "Type annotations and memory addresses",
+                "Lexical tokens only",
+                "Regular expression patterns",
+                "Error messages"
+            ],
+            "answer": "Type annotations and memory addresses",
+            "explanation": "Annotated ASTs store semantic information like variable types and memory locations.",
+            "image": ""
+        },
+        {
+            "question": "The grammar rule for a C/C++ for loop is:",
+            "type": "radio",
+            "options": [
+                "<for_loop> → for ( <init> ; <condition> ; <update> ) <statement>",
+                "<for_loop> → for ( <init> , <condition> , <update> ) <statement>",
+                "<for_loop> → loop ( <init> ; <condition> ; <update> )",
+                "<for_loop> → for <init> <condition> <update> <statement>"
+            ],
+            "answer": "<for_loop> → for ( <init> ; <condition> ; <update> ) <statement>",
+            "explanation": "The C/C++ for loop syntax requires semicolons to separate init, condition, and update.",
+            "image": ""
+        },
+        {
+            "question": "In the statement `position := initial + rate * 60`, the semantic analyzer would:",
+            "type": "radio",
+            "options": [
+                "Convert `60` to a float to match `rate`",
+                "Check if `position` is declared as an array",
+                "Validate the regex pattern",
+                "Group tokens into `id1 := id2 + id3 * 60`"
+            ],
+            "answer": "Convert `60` to a float to match `rate`",
+            "explanation": "Since `rate` is a real, `60` (integer) is coerced to `60.0` for type compatibility.",
+            "image": ""
+        },
+        {
+            "question": "A symbol table entry for an identifier includes:",
+            "type": "radio",
+            "options": [
+                "Type, scope, and memory location",
+                "Line numbers of usage",
+                "Regular expressions for tokens",
+                "Parse tree nodes"
+            ],
+            "answer": "Type, scope, and memory location",
+            "explanation": "Symbol tables store attributes like type, scope, and memory allocation for identifiers.",
+            "image": ""
+        },
+        {
+            "question": "The symbol table is primarily used during:",
+            "type": "radio",
+            "options": [
+                "Semantic analysis",
+                "Lexical analysis",
+                "Code optimization",
+                "All of the above"
+            ],
+            "answer": "Semantic analysis",
+            "explanation": "Semantic analysis relies on the symbol table to verify declarations and type compatibility.",
+            "image": ""
+        },
+        {
+            "question": "Which is a semantic error?",
+            "type": "radio",
+            "options": [
+                "Using an undeclared variable",
+                "Missing a semicolon",
+                "Misspelling a keyword",
+                "Incorrect indentation"
+            ],
+            "answer": "Using an undeclared variable",
+            "explanation": "Semantic errors include undeclared variables, type mismatches, or scope violations.",
+            "image": ""
+        },
+        {
+            "question": "Which error recovery strategy skips tokens until a synchronizing token (e.g., `;`) is found?",
+            "type": "radio",
+            "options": [
+                "Panic mode",
+                "Phrase-level recovery",
+                "Forward referencing",
+                "Type coercion"
+            ],
+            "answer": "Panic mode",
+            "explanation": "Panic mode skips tokens until a known safe point (like a semicolon) to resume parsing.",
+            "image": ""
+        },
+        {
+            "question": "The assembly instruction `mulf R2, 60.0` corresponds to:",
+            "type": "radio",
+            "options": [
+                "Multiplying a floating-point value",
+                "Moving an integer to a register",
+                "Adding two integers",
+                "Jumping to a label"
+            ],
+            "answer": "Multiplying a floating-point value",
+            "explanation": "`mulf` is a floating-point multiplication instruction.",
+            "image": ""
+        },
+        {
+            "question": "The final step in translating `id1 := id2 + Temp2` to assembly is:",
+            "type": "radio",
+            "options": [
+                "movf id1, R1",
+                "addf R1, R2",
+                "mulf R2, 60.0",
+                "print id1"
+            ],
+            "answer": "movf id1, R1",
+            "explanation": "`movf` stores the result from register `R1` into the variable `id1`.",
+            "image": ""
+        },
+        {
+            "question": "A strongly typed language:",
+            "type": "radio",
+            "options": [
+                "Prohibits implicit type conversions",
+                "Allows arbitrary pointer arithmetic",
+                "Uses dynamic scoping",
+                "Requires manual memory management"
+            ],
+            "answer": "Prohibits implicit type conversions",
+            "explanation": "Strong typing enforces strict type rules and minimizes implicit conversions (e.g., Java).",
+            "image": ""
+        },
+        {
+            "question": "Which language uses duck typing?",
+            "type": "radio",
+            "options": [
+                "Python",
+                "C",
+                "Java",
+                "Haskell"
+            ],
+            "answer": "Python",
+            "explanation": "Duck typing (e.g., Python) focuses on an object’s behavior rather than its explicit type.",
+            "image": ""
+        },
+        {
+            "question": "In a `switch` statement grammar, the `default` case is:",
+            "type": "radio",
+            "options": [
+                "Optional and can appear once",
+                "Mandatory",
+                "Allowed multiple times",
+                "Equivalent to `else`"
+            ],
+            "answer": "Optional and can appear once",
+            "explanation": "The `default` case is optional and can only appear once in a `switch` statement.",
+            "image": ""
+        },
+        {
+            "question": "A dangling else problem occurs because:",
+            "type": "radio",
+            "options": [
+                "An `else` clause ambiguously pairs with nested `if` statements",
+                "An `else` is missing its corresponding `if`",
+                "The `else` uses dynamic scoping",
+                "The `else` is unreachable"
+            ],
+            "answer": "An `else` clause ambiguously pairs with nested `if` statements",
+            "explanation": "Nested `if-else` statements can lead to ambiguity in parsing (resolved by the 'closest `if`' rule).",
+            "image": ""
+        }
+    ]
+},
+"Language Evaluation Criteria & Programming Domains": {
+    "description": "Covers language evaluation criteria such as readability, writability, reliability, and cost, along with programming domains and language influences.",
+    "questions": [
+        {
+            "question": "Which criterion refers to the ease with which programs can be understood?",
+            "type": "radio",
+            "options": [
+                "Readability",
+                "Writability",
+                "Reliability",
+                "Cost"
+            ],
+            "answer": "Readability",
+            "explanation": "Readability focuses on how easily humans can read and comprehend code.",
+            "image": ""
+        },
+        {
+            "question": "Orthogonality in language design means:",
+            "type": "radio",
+            "options": [
+                "Features can be combined in a systematic way",
+                "The language supports only one programming paradigm",
+                "All keywords are uppercase",
+                "The compiler is platform-independent"
+            ],
+            "answer": "Features can be combined in a systematic way",
+            "explanation": "Orthogonality ensures language constructs work consistently when combined (e.g., pointers and arrays in C).",
+            "image": ""
+        },
+        {
+            "question": "A language with excessive simplicity might:",
+            "type": "radio",
+            "options": [
+                "Become too low-level, like assembly",
+                "Support too many paradigms",
+                "Lack type checking",
+                "Require dynamic scoping"
+            ],
+            "answer": "Become too low-level, like assembly",
+            "explanation": "Over-simplicity can force programmers to write verbose, low-level code.",
+            "image": ""
+        },
+        {
+            "question": "Which feature improves writability?",
+            "type": "radio",
+            "options": [
+                "High-level abstractions like loops and functions",
+                "Strict type checking",
+                "Manual memory management",
+                "Platform-specific optimizations"
+            ],
+            "answer": "High-level abstractions like loops and functions",
+            "explanation": "Abstractions (e.g., `for` loops) reduce the effort needed to express complex logic.",
+            "image": ""
+        },
+        {
+            "question": "A language’s reliability is ensured by:",
+            "type": "radio",
+            "options": [
+                "Detecting type errors at compile time",
+                "Allowing implicit type conversions",
+                "Using dynamic scoping",
+                "Minimizing orthogonality"
+            ],
+            "answer": "Detecting type errors at compile time",
+            "explanation": "Reliability involves catching errors early, such as type mismatches during compilation.",
+            "image": ""
+        },
+        {
+            "question": "The cost of a programming language includes:",
+            "type": "radio",
+            "options": [
+                "Training developers and maintaining code",
+                "The price of the compiler",
+                "The number of keywords",
+                "The speed of lexical analysis"
+            ],
+            "answer": "Training developers and maintaining code",
+            "explanation": "Cost encompasses development, maintenance, and training expenses.",
+            "image": ""
+        },
+        {
+            "question": "Which factor harms readability?",
+            "type": "radio",
+            "options": [
+                "Operator overloading used inconsistently",
+                "Orthogonal features",
+                "Descriptive variable names",
+                "Consistent indentation"
+            ],
+            "answer": "Operator overloading used inconsistently",
+            "explanation": "Misused operator overloading can confuse developers (e.g., `+` for string concatenation and matrix addition).",
+            "image": ""
+        },
+        {
+            "question": "The dangling else problem is a failure of:",
+            "type": "radio",
+            "options": [
+                "Syntax clarity",
+                "Type checking",
+                "Memory management",
+                "Cost efficiency"
+            ],
+            "answer": "Syntax clarity",
+            "explanation": "Ambiguous syntax (e.g., nested `if-else`) reduces readability.",
+            "image": ""
+        },
+        {
+            "question": "Which language is criticized for poor readability due to 'goto' statements?",
+            "type": "radio",
+            "options": [
+                "Legacy COBOL",
+                "Python",
+                "Haskell",
+                "Java"
+            ],
+            "answer": "Legacy COBOL",
+            "explanation": "Excessive `goto` use in COBOL and early Fortran led to 'spaghetti code.'",
+            "image": ""
+        },
+        {
+            "question": "Expressivity in a language refers to:",
+            "type": "radio",
+            "options": [
+                "Convenient ways to specify computations",
+                "The number of data types supported",
+                "The availability of libraries",
+                "Cross-platform compatibility"
+            ],
+            "answer": "Convenient ways to specify computations",
+            "explanation": "Expressivity allows concise expression of logic (e.g., `count++` instead of `count = count + 1`).",
+            "image": ""
+        },
+        {
+            "question": "Which construct improves writability in loops?",
+            "type": "radio",
+            "options": [
+                "for loops with built-in iteration",
+                "Manual pointer arithmetic",
+                "Assembly-style jumps",
+                "Dynamic scoping"
+            ],
+            "answer": "for loops with built-in iteration",
+            "explanation": "High-level loop constructs abstract iteration details.",
+            "image": ""
+        },
+        {
+            "question": "Which language is dominant in scientific computing?",
+            "type": "radio",
+            "options": [
+                "Fortran",
+                "COBOL",
+                "LISP",
+                "HTML"
+            ],
+            "answer": "Fortran",
+            "explanation": "Fortran’s array handling and performance make it ideal for numerical computations.",
+            "image": ""
+        },
+        {
+            "question": "COBOL is primarily used in:",
+            "type": "radio",
+            "options": [
+                "Business applications (e.g., banking)",
+                "Artificial intelligence",
+                "Systems programming",
+                "Web scripting"
+            ],
+            "answer": "Business applications (e.g., banking)",
+            "explanation": "COBOL excels in transaction processing and report generation.",
+            "image": ""
+        },
+        {
+            "question": "Which language is associated with artificial intelligence?",
+            "type": "radio",
+            "options": [
+                "LISP",
+                "C",
+                "MATLAB",
+                "PHP"
+            ],
+            "answer": "LISP",
+            "explanation": "LISP’s symbolic processing capabilities suit AI and linked-list manipulations.",
+            "image": ""
+        },
+        {
+            "question": "C is commonly used for:",
+            "type": "radio",
+            "options": [
+                "Systems programming (e.g., OS kernels)",
+                "Web frontend development",
+                "Business reports",
+                "Machine learning"
+            ],
+            "answer": "Systems programming (e.g., OS kernels)",
+            "explanation": "C’s efficiency and low-level access make it ideal for system software.",
+            "image": ""
+        },
+        {
+            "question": "HTML is a markup language used in:",
+            "type": "radio",
+            "options": [
+                "Structuring web content",
+                "Numeric computations",
+                "Database management",
+                "Memory allocation"
+            ],
+            "answer": "Structuring web content",
+            "explanation": "HTML defines the structure of web pages using tags like `<h1>` and `<p>`.",
+            "image": ""
+        },
+        {
+            "question": "Which practice undermines reliability?",
+            "type": "radio",
+            "options": [
+                "Allowing implicit type conversions",
+                "Using exception handling",
+                "Enforcing static scoping",
+                "Providing garbage collection"
+            ],
+            "answer": "Allowing implicit type conversions",
+            "explanation": "Implicit conversions (e.g., `int` to `float`) can lead to unintended behavior.",
+            "image": ""
+        },
+        {
+            "question": "Memory leaks are prevented by:",
+            "type": "radio",
+            "options": [
+                "Garbage collection or smart pointers",
+                "Dynamic scoping",
+                "Operator overloading",
+                "Lexical analysis"
+            ],
+            "answer": "Garbage collection or smart pointers",
+            "explanation": "Automatic memory management (e.g., in Java) reduces manual errors.",
+            "image": ""
+        },
+        {
+            "question": "A proprietary language might increase costs due to:",
+            "type": "radio",
+            "options": [
+                "Licensing fees and vendor lock-in",
+                "Open-source contributions",
+                "Simplified syntax",
+                "Dynamic typing"
+            ],
+            "answer": "Licensing fees and vendor lock-in",
+            "explanation": "Proprietary tools often require costly licenses and limit flexibility.",
+            "image": ""
+        },
+        {
+            "question": "ALGOL 60 influenced the development of:",
+            "type": "radio",
+            "options": [
+                "Pascal and C",
+                "COBOL",
+                "LISP",
+                "SQL"
+            ],
+            "answer": "Pascal and C",
+            "explanation": "ALGOL’s block structure and syntax inspired modern languages like C and Pascal.",
+            "image": ""
+        },
+        {
+            "question": "Which language was designed for matrix manipulations?",
+            "type": "radio",
+            "options": [
+                "MATLAB",
+                "Python",
+                "Java",
+                "Ruby"
+            ],
+            "answer": "MATLAB",
+            "explanation": "MATLAB’s syntax and libraries are optimized for matrix operations.",
+            "image": ""
+        },
+        {
+            "question": "The TIOBE Index measures:",
+            "type": "radio",
+            "options": [
+                "Programming language popularity",
+                "Compiler efficiency",
+                "Memory usage",
+                "Type safety"
+            ],
+            "answer": "Programming language popularity",
+            "explanation": "TIOBE ranks languages based on search engine results and developer activity.",
+            "image": ""
+        },
+        {
+            "question": "Which domain uses SQL extensively?",
+            "type": "radio",
+            "options": [
+                "Database management",
+                "Game development",
+                "Embedded systems",
+                "Machine learning"
+            ],
+            "answer": "Database management",
+            "explanation": "SQL is the standard language for relational database queries.",
+            "image": ""
+        },
+        {
+            "question": "CUDA is a language extension for:",
+            "type": "radio",
+            "options": [
+                "GPU programming",
+                "Web development",
+                "Business logic",
+                "Mobile apps"
+            ],
+            "answer": "GPU programming",
+            "explanation": "CUDA enables parallel computing on NVIDIA GPUs.",
+            "image": ""
+        }
+    ]
+}
+
+
+
+
+
+
+}

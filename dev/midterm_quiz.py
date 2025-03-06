@@ -202,7 +202,7 @@ class QuizApp:
         q_index = random.choice(available_questions)
         self.asked_questions.add(q_index)
         self.current_question = self.questions[self.current_topic][q_index]
-        self.current_answer = self.current_question["answer"]
+        self.current_answer = self.current_question.get("answer", self.current_question.get("expected_answer", ""))
         self.current_attempts = 0
         self.selected_answers = []
 
