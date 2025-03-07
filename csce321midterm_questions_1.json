@@ -1,5 +1,5 @@
 {
-    "Operating Systems: Internals and Design Principles - Chapter 1": {
+    "Chapter 1: Computer system overview I": {
         "description": "Covers the fundamental components of computer systems, including hardware, operating systems, applications, and users, as well as the role of the operating system in managing system resources.",
         "questions": [
             {
@@ -93,7 +93,7 @@
         ]
     }, 
     
-        "Operating Systems: Internals and Design Principles - Chapter 2": {
+        "Chapter 2: OS overview": {
             "description": "Explores the evolution of operating systems, their objectives, functions, and various types, including batch, multiprogrammed, and time-sharing systems.",
             "questions": [
                 {
@@ -208,7 +208,7 @@
     
 
 
-    "Operating Systems: Internals and Design Principles - Chapter 3": {
+    "Chapter 3: Process description and control": {
         "description": "Process management including creation, termination, and synchronization.",
         "questions": [
             {
@@ -548,8 +548,220 @@
         }
 
         ]
-    },
-    "Operating Systems: Internals and Design Principles - Chapter 5": {
+    },"Operating Systems: Internals and Design Principles - Chapter 4": {
+        "description": "Explores threads, covering concepts such as thread states, user-level and kernel-level threads, multithreading models, and thread synchronization.",
+        "questions": [
+            {
+                "question": "What is the primary difference between a process and a thread?",
+                "type": "radio",
+                "options": ["Threads share the same memory space; processes do not", "Processes are scheduled by the OS; threads are not", "Threads cannot be created within processes", "Processes can exist without threads"],
+                "answer": "Threads share the same memory space; processes do not",
+                "explanation": "Threads within the same process share the same memory space, allowing for efficient communication and resource sharing, whereas processes have separate memory spaces.",
+                "image": ""
+            },
+            {
+                "question": "Which of the following is NOT a benefit of multithreading?",
+                "type": "radio",
+                "options": ["Improved application responsiveness", "Enhanced CPU utilization", "Simplified program structure", "Concurrent execution of tasks"],
+                "answer": "Simplified program structure",
+                "explanation": "While multithreading offers benefits like improved responsiveness and CPU utilization, it can complicate program structure due to the need for synchronization mechanisms.",
+                "image": ""
+            },
+            {
+                "question": "In a multithreaded process, what happens when one thread performs a blocking system call?",
+                "type": "radio",
+                "options": ["All threads in the process are blocked", "Only the calling thread is blocked", "The OS terminates the process", "Other threads continue execution unaffected"],
+                "answer": "Only the calling thread is blocked",
+                "explanation": "In multithreaded environments, a blocking system call affects only the calling thread; other threads can continue execution.",
+                "image": ""
+            },
+            {
+                "question": "Which of the following is a characteristic of user-level threads?",
+                "type": "radio",
+                "options": ["Managed by the operating system kernel", "Require kernel intervention for synchronization", "Cannot take advantage of multiple processors", "Have higher overhead compared to kernel-level threads"],
+                "answer": "Cannot take advantage of multiple processors",
+                "explanation": "User-level threads are managed by user-level libraries and cannot utilize multiple processors for parallel execution; kernel-level threads can.",
+                "image": ""
+            },
+            {
+                "question": "What is the main advantage of kernel-level threads over user-level threads?",
+                "type": "radio",
+                "options": ["Lower overhead", "No need for synchronization", "Ability to run on multiple processors simultaneously", "Simplified implementation"],
+                "answer": "Ability to run on multiple processors simultaneously",
+                "explanation": "Kernel-level threads are recognized by the operating system and can be scheduled on multiple processors, enabling true parallelism.",
+                "image": ""
+            },
+            {
+                "question": "Which of the following is a potential disadvantage of user-level threads?",
+                "type": "radio",
+                "options": ["Inability to perform asynchronous I/O", "Increased context-switching overhead", "Blocking system calls can block the entire process", "Lack of control over thread scheduling"],
+                "answer": "Blocking system calls can block the entire process",
+                "explanation": "In user-level threading, if one thread performs a blocking system call, the entire process may be blocked, affecting all threads.",
+                "image": ""
+            },
+            {
+                "question": "Which multithreading model maps user-level threads to kernel-level threads one-to-one?",
+                "type": "radio",
+                "options": ["Many-to-One", "One-to-One", "Many-to-Many", "Two-Level"],
+                "answer": "One-to-One",
+                "explanation": "The One-to-One model maps each user-level thread to a unique kernel-level thread, allowing for true parallel execution on multiple processors.",
+                "image": ""
+            },
+            {
+                "question": "What is the purpose of thread synchronization mechanisms?",
+                "type": "radio",
+                "options": ["To prevent threads from executing concurrently", "To ensure threads do not interfere with each other's data", "To allow threads to share resources without restrictions", "To eliminate the need for mutual exclusion"],
+                "answer": "To ensure threads do not interfere with each other's data",
+                "explanation": "Thread synchronization mechanisms, such as mutexes and semaphores, are used to coordinate thread access to shared resources, preventing data corruption.",
+                "image": ""
+            },
+            {
+                "question": "Which of the following is an example of a user-level thread library?",
+                "type": "radio",
+                "options": ["POSIX Threads (pthreads)", "Windows Threads", "Java Threads", "Green Threads"],
+                "answer": "Green Threads",
+                "explanation": "Green Threads are a user-level thread library where the user-level threads are scheduled by a user-level thread library, not the operating system.",
+                "image": ""
+            },
+            {
+                "question": "In the context of multithreading, what does the term 'concurrent execution' refer to?",
+                "type": "radio",
+                "options": ["Multiple threads executing simultaneously on multiple processors", "Multiple threads executing in an interleaved manner on a single processor", "Multiple threads executing without any synchronization", "Multiple threads executing without sharing resources"],
+                "answer": "Multiple threads executing in an interleaved manner on a single processor",
+                "explanation": "Concurrent execution refers to multiple threads making progress within overlapping time periods, even if not simultaneously, by interleaving their execution on a single processor.",
+                "image": ""
+            },
+            {
+                "question": "Which of the following is a key challenge in multithreaded programming?",
+                "type": "radio",
+                "options": ["Ensuring threads do not share resources", "Managing the execution order of threads", "Avoiding the use of synchronization mechanisms", "Preventing the operating system from scheduling threads"],
+                "answer": "Managing the execution order of threads",
+                "explanation": "Properly managing the execution order of threads is crucial to prevent issues like race conditions and ensure correct program behavior.",
+                "image": ""
+            },
+            {
+                "question": "Which of the following is a benefit of using threads within a process?",
+                "type": "radio",
+                "options": ["Isolation of threads from each other", "Independent scheduling of threads by the operating system", "Shared memory space among threads within the same process", "Inability of threads to communicate with each other"],
+                "answer": "Shared memory space among threads within the same process",
+                "explanation": "Threads within the same process share the same memory space, allowing for efficient communication and data sharing.",
+                "image": ""
+            }
+	]
+	}, 
+    "Chapter 4: Threads": {
+        "description": "Explores threads, covering concepts such as thread states, user-level and kernel-level threads, multithreading models, and thread synchronization.",
+        "questions": [
+            {
+                "question": "What is the primary difference between a process and a thread?",
+                "type": "radio",
+                "options": ["Threads share the same memory space; processes do not", "Processes are scheduled by the OS; threads are not", "Threads cannot be created within processes", "Processes can exist without threads"],
+                "answer": "Threads share the same memory space; processes do not",
+                "explanation": "Threads within the same process share the same memory space, allowing for efficient communication and resource sharing, whereas processes have separate memory spaces.",
+                "image": ""
+            },
+            {
+                "question": "Which of the following is NOT a benefit of multithreading?",
+                "type": "radio",
+                "options": ["Improved application responsiveness", "Enhanced CPU utilization", "Simplified program structure", "Concurrent execution of tasks"],
+                "answer": "Simplified program structure",
+                "explanation": "While multithreading offers benefits like improved responsiveness and CPU utilization, it can complicate program structure due to the need for synchronization mechanisms.",
+                "image": ""
+            },
+            {
+                "question": "In a multithreaded process, what happens when one thread performs a blocking system call?",
+                "type": "radio",
+                "options": ["All threads in the process are blocked", "Only the calling thread is blocked", "The OS terminates the process", "Other threads continue execution unaffected"],
+                "answer": "Only the calling thread is blocked",
+                "explanation": "In multithreaded environments, a blocking system call affects only the calling thread; other threads can continue execution.",
+                "image": ""
+            },
+            {
+                "question": "Which of the following is a characteristic of user-level threads?",
+                "type": "radio",
+                "options": ["Managed by the operating system kernel", "Require kernel intervention for synchronization", "Cannot take advantage of multiple processors", "Have higher overhead compared to kernel-level threads"],
+                "answer": "Cannot take advantage of multiple processors",
+                "explanation": "User-level threads are managed by user-level libraries and cannot utilize multiple processors for parallel execution; kernel-level threads can.",
+                "image": ""
+            },
+            {
+                "question": "What is the main advantage of kernel-level threads over user-level threads?",
+                "type": "radio",
+                "options": ["Lower overhead", "No need for synchronization", "Ability to run on multiple processors simultaneously", "Simplified implementation"],
+                "answer": "Ability to run on multiple processors simultaneously",
+                "explanation": "Kernel-level threads are recognized by the operating system and can be scheduled on multiple processors, enabling true parallelism.",
+                "image": ""
+            },
+            {
+                "question": "Which of the following is a potential disadvantage of user-level threads?",
+                "type": "radio",
+                "options": ["Inability to perform asynchronous I/O", "Increased context-switching overhead", "Blocking system calls can block the entire process", "Lack of control over thread scheduling"],
+                "answer": "Blocking system calls can block the entire process",
+                "explanation": "In user-level threading, if one thread performs a blocking system call, the entire process may be blocked, affecting all threads.",
+                "image": ""
+            },
+            {
+                "question": "Which multithreading model maps user-level threads to kernel-level threads one-to-one?",
+                "type": "radio",
+                "options": ["Many-to-One", "One-to-One", "Many-to-Many", "Two-Level"],
+                "answer": "One-to-One",
+                "explanation": "The One-to-One model maps each user-level thread to a unique kernel-level thread, allowing for true parallel execution on multiple processors.",
+                "image": ""
+            },
+            {
+                "question": "What is the purpose of thread synchronization mechanisms?",
+                "type": "radio",
+                "options": ["To prevent threads from executing concurrently", "To ensure threads do not interfere with each other's data", "To allow threads to share resources without restrictions", "To eliminate the need for mutual exclusion"],
+                "answer": "To ensure threads do not interfere with each other's data",
+                "explanation": "Thread synchronization mechanisms, such as mutexes and semaphores, are used to coordinate thread access to shared resources, preventing data corruption.",
+                "image": ""
+            },
+            {
+                "question": "Which of the following is an example of a user-level thread library?",
+                "type": "radio",
+                "options": ["POSIX Threads (pthreads)", "Windows Threads", "Java Threads", "Green Threads"],
+                "answer": "Green Threads",
+                "explanation": "Green Threads are a user-level thread library where the user-level threads are scheduled by a user-level thread library, not the operating system.",
+                "image": ""
+            },
+            {
+                "question": "In the context of multithreading, what does the term 'concurrent execution' refer to?",
+                "type": "radio",
+                "options": ["Multiple threads executing simultaneously on multiple processors", "Multiple threads executing in an interleaved manner on a single processor", "Multiple threads executing without any synchronization", "Multiple threads executing without sharing resources"],
+                "answer": "Multiple threads executing in an interleaved manner on a single processor",
+                "explanation": "Concurrent execution refers to multiple threads making progress within overlapping time periods, even if not simultaneously, by interleaving their execution on a single processor.",
+                "image": ""
+            },
+            {
+                "question": "Which of the following is a key challenge in multithreaded programming?",
+                "type": "radio",
+                "options": ["Ensuring threads do not share resources", "Managing the execution order of threads", "Avoiding the use of synchronization mechanisms", "Preventing the operating system from scheduling threads"],
+                "answer": "Managing the execution order of threads",
+                "explanation": "Properly managing the execution order of threads is crucial to prevent issues like race conditions and ensure correct program behavior.",
+                "image": ""
+            },
+            {
+                "question": "Which of the following is a benefit of using threads within a process?",
+                "type": "radio",
+                "options": ["Isolation of threads from each other", "Independent scheduling of threads by the operating system", "Shared memory space among threads within the same process", "Inability of threads to communicate with each other"],
+                "answer": "Shared memory space among threads within the same process",
+                "explanation": "Threads within the same process share the same memory space, allowing for efficient communication and data sharing.",
+                "image": ""
+            },
+            {
+                "question": "Which of the following is a potential issue when multiple threads access shared data?",
+                "type": "radio",
+                "options": ["Increased CPU utilization", "Data inconsistency due to concurrent modifications", "Improved data security", "Simplified program debugging"],
+                "answer": "Data inconsistency due to concurrent modifications",
+                "explanation": "Concurrent access to shared data by multiple threads without proper synchronization can lead to data inconsistencies and unpredictable behavior."
+			}
+		]
+    },       
+ 
+
+
+	
+    "Chapter 5: concurrency": {
         "description": "Concurrency control with semaphores and synchronization.",
         "questions": [
             {
